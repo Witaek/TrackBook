@@ -1,0 +1,6 @@
+[book]
+authors = ["Bastian LARVOR, Romain AMÉDÉE, Guilhem HONORÉ, Arthur CHAUVE"]
+language = "en"
+multilingual = false
+src = "src"
+description = " The Trackbook describes the structures and goals of the RusTracker project"
