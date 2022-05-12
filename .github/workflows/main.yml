@@ -13,7 +13,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps: 
       - uses: actions/checkout@v3
-      - run: apt install mdbook
+      - run: sudo apt install mdbook
       #  uses: peaceiris/actions-mdbook@v1
       #  with:
        #   mdbook-version: 'latest'
