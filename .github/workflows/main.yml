@@ -13,10 +13,10 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps: 
       - uses: actions/checkout@v3
-      - name: apt install mdbook
-        uses: peaceiris/actions-mdbook@v1
-        with:
-          mdbook-version: 'latest'
+      - run: apt install mdbook
+      #  uses: peaceiris/actions-mdbook@v1
+      #  with:
+       #   mdbook-version: 'latest'
           # mdbook-version: 'latest'
 
       - run: cd Trackbook && mdbook build
