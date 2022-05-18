@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/index.html"><strong aria-hidden="true">1.</strong> Setup</a></li><li class="chapter-item expanded affix "><li class="part-title">RusTracker</li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/index.html"><strong aria-hidden="true">1.</strong> Setup</a></li><li class="chapter-item expanded affix "><li class="part-title">RusTracker</li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -135,8 +135,31 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="présentation"><a class="header" href="#présentation">Présentation</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="setup"><a class="header" href="#setup">Setup</a></h1>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p style="text-align:justify;">L’ADS-B (Automatic Dependent Surveillance-Broadcast) est un système de contrôle du
+trafic aérien. Un avion utilisant l’ADS-B détermine sa position par un système de positionnement satellite et
+la renvoit cette dernière (ainsi que d’autres informations sur le vol, altitude, vitesse, modèle de l’avion, etc)
+dans toutes les directions aux autres appareils disposant de l’ADS-B. Ces messages sont détectables, puis
+démodulables, par toute personne à l’aide d’une clef TNT (tuner RTL2832U, 15€), utilisée en SDR (Soft-
+ware Defined Radio), qui permet de définir les paramètres de réception, comme par exemple la fréquence,
+depuis l’ordinateur. L’objectif du projet est d’utiliser ces messages envoyés par les avions, et de proposer
+une interface graphique à l’utilisateur. Sur cette interface, on souhaite observer en temps réel l’ensemble
+des avions à portée de notre antenne ; nous souhaitons également pouvoir observer la trajectoire des avions
+ainsi que connaître les informations sur le vol (altitude, vitesse, moteur, ...).</p>
+<h3 id="description-du-livrable-minimal-"><a class="header" href="#description-du-livrable-minimal-">Description du livrable minimal :</a></h3>
+<ul>
+<li>Intercepter, démoduler, interpréter des signaux ADS-B envoyés par plusieurs avions</li>
+<li>En extraire des informations sur la position, vitesse, modèle,...</li>
+<li>Utiliser ces données pour générer en temps réel une carte sur laquelle figurent les avions</li>
+<li>Possibilité d’obtenir les informations concernant le vol des avions sélectionnés</li>
+</ul>
+<br/>
+<p style="text-align: center;">
+<img  typeof="foaf:Image" src="images/exemple.png"  width="350" height="350" alt="" title="Foto: Edis Škulj/fkmladost.ba">  
+</p>
+<p style="text-align: center;">
+    <b> Exemple de carte recherchée (FlightRadar24) </b>
+</p><div style="break-before: page; page-break-before: always;"></div><h1 id="setup"><a class="header" href="#setup">Setup</a></h1>
 
                     </main>
 
