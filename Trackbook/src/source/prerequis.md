@@ -1,6 +1,6 @@
 # Prérequis
 
-Afin de faire fonctionner Source,  il est nécessaire de correctement configurer les drivers pour utiliser les antennes RTL-SDR correctement. On propose ici un guide afin d'effectuer correctement les installations nécessaires au bon fonctionnement de Source.
+<p style="text-align:justify;">Afin de faire fonctionner Source,  il est nécessaire de correctement configurer les drivers pour utiliser les antennes RTL-SDR correctement. On propose ici un guide afin d'effectuer correctement les installations nécessaires au bon fonctionnement de Source.</p>
 
 ### Blacklist des pilotes
 
