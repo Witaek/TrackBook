@@ -22,4 +22,4 @@
 
 # Divers 
 
-- [Contributeurs](divers/contributors.md)
+[Contributeurs](divers/contributors.md)
