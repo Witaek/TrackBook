@@ -35,7 +35,7 @@ Ce projet est décomposée en trois parties communicantes les unes avec les autr
  <ul>
   <li> <p style="text-align:justify;"> <b>Source</b> : c'est le programme chargé d'intercepter les signaux ADS-B émis par les avions à 1090MHz. Il procède ensuite de les démoduler (réception sous forme de I&Qs), de les convertir en binaire et les envoit, grâce au protocole TCP, à Rustracker. </p></li>
   <li> <p style="text-align:justify;"> <b>Rustracker</b>: c'est le programme principal, stocké sur une machine virtuelle, qui récupère les signaux sous forme binaire émis par Source, les interprète afin d'en extraire les informations sur le vol des avions (position, vitesse, altitude, numéro de vol, etc). Il écrit toutes ces informations dans un fichier geojson qui sera lu par Trackui. </p> </li>
-  <li><p style="text-align:justify;"> <b>Trackui</b>: il s'agit de l'interface graphique de notre travail, sous forme de page web, herbergée par un serveur nginx sur la machien virtuelle évoquée plus tôt. Elle consulte à intervalles de temps régulier le fichier geojson mis à disposition par Rustracker et affiche les avions en conséquences sur la carte, les autres données concernant les avions sont regroupées dans un tableau à côté de la carte.</p>
+  <li><p style="text-align:justify;"> <b>Trackui</b>: il s'agit de l'interface graphique de notre travail, sous forme de page web, herbergée par un serveur nginx sur la machine virtuelle évoquée plus tôt. Elle consulte à intervalles de temps régulier le fichier geojson mis à disposition par Rustracker et affiche les avions en conséquences sur la carte, les autres données concernant les avions sont regroupées dans un tableau à côté de la carte.</p>
 </li>
 </ul> 
 
