@@ -1,11 +1,25 @@
 # Summary
 
 [Introduction](README.md)
+- [Format](format.md)
+[Project Storyline](story.md)
 
-# Source
+# User Guide
 
-- [Setup](source/README.md)
+# Detailed Conception
 
-# RusTracker
+- [Set Up](conception/README.md)
 
-# Trackui
+- [Rustracker](conception/rustracker.md)
+
+- [Trackui](conception/trackui.md)
+
+# Test Results
+
+-----------
+
+[Project Storyline](story.md)
+
+-----------
+
+[Conclusion](conclusion.md)

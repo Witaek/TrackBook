@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/index.html"><strong aria-hidden="true">1.</strong> Setup</a></li><li class="chapter-item expanded affix "><li class="part-title">RusTracker</li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="format.html"><strong aria-hidden="true">1.</strong> Format</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded affix "><li class="part-title">Detailed Conception</li><li class="chapter-item expanded "><a href="conception/index.html"><strong aria-hidden="true">2.</strong> Set Up</a></li><li class="chapter-item expanded "><a href="conception/rustracker.html"><strong aria-hidden="true">3.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="conception/trackui.html"><strong aria-hidden="true">4.</strong> Trackui</a></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="conclusion.html">Conclusion</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -135,8 +135,39 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="présentation"><a class="header" href="#présentation">Présentation</a></h1>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>The RusTracker project is a web software using public Automatic Dependant Surveillance-Broadcast (ADS-B) data to track flights. Informations such as speed, location or model can be find in ADS-B data <sup class="footnote-reference"><a href="#note">1</a></sup>. The goals of the project are to detect and receive those data, then to create an utilisator interface. On that interface, the user could see planes in real time , in antenna range. He could also oberserve the plane trajectory and know the flight informations(speed, high, engine).</p>
+<p>This markdown book serves as project report. You can find the source code on the three on the different GitHubs:</p>
+<ul>
+<li><a href="">RusTracker</a> for the treatment of data.</li>
+<li><a href="">Trackui</a> for the graphic interface.</li>
+<li><a href="">Trackbook</a> for the Rust Programming Language book.</li>
+</ul>
+<div class="footnote-definition" id="note"><sup class="footnote-definition-label">1</sup>
+<p>ADS-B data is public, every aircrafts in the world are required to have a transponder.</p>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="format"><a class="header" href="#format">Format</a></h1>
+<p>The conception can be divided on three greats parts:</p>
+<ol>
+<li>The source aquisition.</li>
+<li>The main code.</li>
+<li>The user interface.</li>
+</ol>
+<p><img src="images/diag_seq.png" alt="Diagramme Séquentiel" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="setup"><a class="header" href="#setup">Setup</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="storyline"><a class="header" href="#storyline">Storyline</a></h1>
+<p>The original retro planning was:</p>
+<p><img src="images/retroplan.png" alt="Retro Planning" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h1>
+<h3 id="contributors"><a class="header" href="#contributors">Contributors</a></h3>
+<p>RusTracker has been realized by four Télécom SudParis students, here they are:</p>
+<ul>
+<li><a href="https://github.com/Witaek">Romain Amédée</a></li>
+<li><a href="https://github.com/ArthurChauve">Arthur Chauve</a></li>
+<li><a href="https://github.com/GuilhemHnr">Guilhem Honoré</a></li>
+<li><a href="https://github.com/blaaass">Bastian Larvor</a></li>
+</ul>
+<p>And thank you to <a href="https://github.com/rgrunbla">Rémy Grünblatt</a> for your help.</p>
 
                     </main>
 
