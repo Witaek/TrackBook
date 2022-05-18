@@ -8,7 +8,8 @@
 
 # Detailed Conception
 
-- [Set Up](conception/README.md)
+- [Source](conception/README.md)
+    - [Set up](conception/setup.md)
 
 - [Rustracker](conception/rustracker.md)
 
