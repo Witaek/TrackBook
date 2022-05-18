@@ -2,7 +2,7 @@
 
 All the project goals have been completed in time. The software is completely working, the managed to learn a new programming language and to overcom difficulties during the devellopment.
 
-### Contributors
+### Contributeurs
 
 Les quatre étudiants de Télécom SudParis ayant contribués au projet sont : 
 * [Romain Amédée](https://github.com/Witaek)
