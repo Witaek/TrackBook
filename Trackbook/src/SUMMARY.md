@@ -1,20 +1,27 @@
 # Summary
 
-[Introduction](README.md)
+[Introduction](intro.md)
 - [Architecture](architecture.md)
 
+-----------
 
-# User Guide
+# Guide d'utilisation
 
-# Detailed Conception
+# Source
 
-- [Source](source/README.md)
-    - [Set up](source/setup.md)
+- [Prérequis](source/prerequis.md)
+- [Set up](source/setup.md)
 
+# Rustracker
+- [Prérequis](rustracker/prerequis.md)
 - [Rustracker](rustracker/README.md)
 
+
+# Trackui 
+- [Prérequis](trackui/prerequis.md)
+
 - [Trackui](trackui/README.md)
-    - [Virtual Machine](trackui/vm.md)
+- [Virtual Machine](trackui/vm.md)
 
 -----------
 
