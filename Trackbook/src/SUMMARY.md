@@ -4,6 +4,7 @@
 - [Prérequis](prerequis.md)
 - [Architecture](architecture.md)
 
+-----------
 
 # Guide d'utilisation
 
