@@ -37,9 +37,9 @@ Enfin, supprimons le pilote déjà chargé.
 
     ~ $ blacklist dvb_usb_rtl28xxu
 
-#### Instalation des pilotes
+#### Installation des pilotes
 
-Commençons par installer la librairie nécessaire à l'utilisation de SoapySDR, la crate que nouis utilisons afin d'utiliser les dongles rtlsdr avec notre code RUST.
+Commençons par installer la librairie nécessaire à l'utilisation de SoapySDR, la crate que nous utilisons afin d'utiliser les dongles rtlsdr avec notre code RUST.
 
     sudo apt install libsoapysdr-dev libclang-dev llvm-dev pkg-config
 

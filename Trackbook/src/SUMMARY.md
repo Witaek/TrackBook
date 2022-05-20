@@ -19,7 +19,7 @@
 # Trackui 
 
 - [Trackui](trackui/README.md)
-- [Virtual Machine](trackui/vm.md)
+- [Machine Virtuelle](trackui/vm.md)
 
 -----------
 
