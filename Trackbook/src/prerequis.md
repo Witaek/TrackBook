@@ -1,8 +1,20 @@
 # Prérequis
 
+
+## Rust 
+
+Afin de faire tourner nos différents programmes (Source & Rustracker), il est nécessaire d'installer le gestionnaire de paquet rust "Cargo" ainsi que le gestionnaire des chaînes d'outils "rustup".
+
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+<br/>
+
+---
+## Source
+ 
 <p style="text-align:justify;">Afin de faire fonctionner Source,  il est nécessaire de correctement configurer les drivers pour utiliser les antennes RTL-SDR correctement. On propose ici un guide afin d'effectuer correctement les installations nécessaires au bon fonctionnement de Source.</p>
 
-### Blacklist des pilotes
+#### Blacklist des pilotes
 
 Commençons par connecter le dongle TNT à l'ordinateur.
 
@@ -25,7 +37,7 @@ Enfin, supprimons le pilote déjà chargé.
 
     ~ $ blacklist dvb_usb_rtl28xxu
 
-### Instalation des pilotes
+#### Instalation des pilotes
 
 Commençons par installer la librairie nécessaire à l'utilisation de SoapySDR, la crate que nouis utilisons afin d'utiliser les dongles rtlsdr avec notre code RUST.
 
@@ -44,3 +56,24 @@ Enfin on installe le plugin Soapy pour RTL-SDR.
     cmake ..
     make
     sudo make install
+
+<br/>
+
+---
+
+## Rustracker
+
+L'installation de certaines librairies est nécessaires au bon fonctionnement du programme Rustracker.
+
+Installons d'abord une librairie permettant d'utiliser pkg-config, un programme de gestion des librairies.
+
+    sudo apt install pkg-config
+
+On installe ensuite la librairie ZeroMQ que l'on utiliser pour les communications tcp entre Source et Rustracker.
+
+    sudo apt install libzmq3-dev
+
+Enfin, on installe deux packages nécessaires à la compilation.
+
+    sudo apt install build-essential
+    sudo apt install cmake
