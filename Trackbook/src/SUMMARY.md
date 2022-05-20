@@ -1,6 +1,7 @@
 # Summary
 
 [Introduction](intro.md)
+- [Prérequis](prerequis.md)
 - [Architecture](architecture.md)
 
 
@@ -8,16 +9,13 @@
 
 # Source
 
-- [Prérequis](source/prerequis.md)
 - [Set up](source/setup.md)
 
 # Rustracker
-- [Prérequis](rustracker/prerequis.md)
 - [Rustracker](rustracker/README.md)
 
 
 # Trackui 
-- [Prérequis](trackui/prerequis.md)
 
 - [Trackui](trackui/README.md)
 - [Virtual Machine](trackui/vm.md)
