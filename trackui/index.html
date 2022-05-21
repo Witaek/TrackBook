@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="../source/setup.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="../rustracker/index.html"><strong aria-hidden="true">4.</strong> Rustracker</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="../trackui/index.html" class="active"><strong aria-hidden="true">5.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="../trackui/vm.html"><strong aria-hidden="true">6.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../conclusion.html">Conclusion</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="../contexte.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="../source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="../source/setup.html"><strong aria-hidden="true">5.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="../rustracker/index.html"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="../rustracker/position.html"><strong aria-hidden="true">7.</strong> Position</a></li><li class="chapter-item expanded "><a href="../rustracker/vitesse.html"><strong aria-hidden="true">8.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="../rustracker/callsign.html"><strong aria-hidden="true">9.</strong> callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="../trackui/index.html" class="active"><strong aria-hidden="true">10.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="../trackui/vm.html"><strong aria-hidden="true">11.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../conclusion.html">Conclusion</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,12 +134,19 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="trackui"><a class="header" href="#trackui">Trackui</a></h1>
+<p style="text-align:justify;">L’interface graphique est codée en JavaScript. On utilise Leaflet qui est un package permettant de générer une carte. Cette carte affiche en temps réel les avions dont la position est partagée.
+<p>Cependant comme ce n’est pas toujours le cas (selon le type de transpondeur de l’avion), et afin de présenter les informations supplémentaires tel que le numéro de vol, l’altitude et la vitesse, on a fait le choix d’ajouter un tableau contenant la liste des avions.</p>
+<p>De plus, ce tableau dispose de code OACI « cliquable » pour les avions dont la position est visible sur la carte. Lorsque l’on clique sur un bouton, la carte se recentre alors sur l’avion sélectionné et affiche son icone et sa trajectoire dans une couleur différente afin de le mettre en valeur.</p>
+<p>Enfin, la collecte des informations se fait en récupérant les informations du geojson généré par Rustracker toutes les 1,5 secondes. Le geojson est une FeatureCollection qui regroupe plusieurs Features qui sont nos avions. Ces Features ont pour ID le code OACI, et sont des LineString, c’est-à-dire que le champs geometry contient l’ensemble des points qui composent la trajectoire, puis dispose en attribut du reste des informations de l’avion.</p>
+<p>En itérant sur toutes les Feature, on ajoute pour chacune un calque à la carte qui affiche la trajectoire, et l’icone que l’on oriente grâce au « track angle » (la route suivie par l’avion). Chacun de ses calques sont dans un même groupe de calque.</p>
+<p>A chaque nouvelle réception des données du geojson, on vide alors ce groupe de calque afin de le reremplir avec les informations actualisées</p></p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../rustracker/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../rustracker/callsign.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                             <a rel="next" href="../trackui/vm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
@@ -151,7 +158,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../rustracker/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../rustracker/callsign.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <a rel="next" href="../trackui/vm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">

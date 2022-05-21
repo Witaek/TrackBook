@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introduction</title>
+        <title>Set up</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content=" The Trackbook describes the structures and goals of the RusTracker project">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html" class="active">Introduction</a></li><li class="chapter-item expanded "><a href="prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="contexte.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="source/setup.html"><strong aria-hidden="true">5.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="rustracker/index.html"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="rustracker/position.html"><strong aria-hidden="true">7.</strong> Position</a></li><li class="chapter-item expanded "><a href="rustracker/vitesse.html"><strong aria-hidden="true">8.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="rustracker/callsign.html"><strong aria-hidden="true">9.</strong> callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="trackui/index.html"><strong aria-hidden="true">10.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="trackui/vm.html"><strong aria-hidden="true">11.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="conclusion.html">Conclusion</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="contexte.html" class="active"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="source/setup.html"><strong aria-hidden="true">5.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="rustracker/index.html"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="rustracker/position.html"><strong aria-hidden="true">7.</strong> Position</a></li><li class="chapter-item expanded "><a href="rustracker/vitesse.html"><strong aria-hidden="true">8.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="rustracker/callsign.html"><strong aria-hidden="true">9.</strong> callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="trackui/index.html"><strong aria-hidden="true">10.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="trackui/vm.html"><strong aria-hidden="true">11.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="conclusion.html">Conclusion</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,46 +134,43 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p style="text-align:justify;">L’ADS-B (Automatic Dependent Surveillance-Broadcast) est un système de contrôle du
-trafic aérien. Un avion utilisant l’ADS-B détermine sa position par un système de positionnement satellite et
-la renvoit cette dernière (ainsi que d’autres informations sur le vol, altitude, vitesse, modèle de l’avion, etc)
-dans toutes les directions aux autres appareils disposant de l’ADS-B. Ces messages sont détectables, puis
-démodulables, par toute personne à l’aide d’une clef TNT (tuner RTL2832U, 15€), utilisée en SDR (Software Defined Radio),
-qui permet de définir les paramètres de réception, comme par exemple la fréquence,
-depuis l’ordinateur. L’objectif du projet est d’utiliser ces messages envoyés par les avions, et de proposer
-une interface graphique à l’utilisateur. Sur cette interface, on souhaite observer en temps réel l’ensemble
-des avions à portée de notre antenne ; nous souhaitons également pouvoir observer la trajectoire des avions
-ainsi que connaître les informations sur le vol (altitude, vitesse, moteur, ...).</p>
-<h3 id="description-du-livrable-minimal-"><a class="header" href="#description-du-livrable-minimal-">Description du livrable minimal :</a></h3>
-<ul>
-<li>Intercepter, démoduler, interpréter des signaux ADS-B envoyés par plusieurs avions</li>
-<li>En extraire des informations sur la position, vitesse, modèle,...</li>
-<li>Utiliser ces données pour générer en temps réel une carte sur laquelle figurent les avions</li>
-<li>Possibilité d’obtenir les informations concernant le vol des avions sélectionnés</li>
-</ul>
-<br/>
-<p style="text-align: center;">
-<img  typeof="foaf:Image" src="images/exemple.png"  width="350" height="350" alt="" title="Foto: Edis Škulj/fkmladost.ba">  
-</p>
-<p style="text-align: center;">
-    <b> Exemple de carte recherchée (FlightRadar24) </b>
-</p>
-<h3 id="description-brève-"><a class="header" href="#description-brève-">Description brève :</a></h3>
-<p>Ce projet est décomposée en trois parties communicantes les unes avec les autres : Source, Rustracker et TrackUI.</p>
+                        <h1 id="contexte"><a class="header" href="#contexte">Contexte</a></h1>
 <p style="text-align:justify;">
+Le résultat finalse présente sous forme de carte interactive des avions, toutefois, l’information a suivit un long processus avant de pouvoir être présentée sous une forme compréhensible pour l’utilisateur.
+<p>Nous allons donc nous intéresser au voyage d’un message ADS-B.</p>
+<p>Comme nous l’avons spécifié en introduction, l’<em>Automatic Dependent Surveillance-Broadcast</em> (ADS-B) est un mode de communication qui sert au contrôle aérien.</p>
+<p>Les deux premières lettres de l’acronyme permettent de comprendre les enjeux du formatage et du mode de transmission des messages.</p>
+<p><em>« Automatic »</em> signifie que les messages sont envoyés automatiquement, il n’est pas nécessaire de solliciter le transpondeur de l’avion pour obtenir une réponse (ce qui se fait dans d’autre méthode de contrôle aérien). Cela impose donc aussi d’avoir un programme suffisamment performant pour soutenir les flows de messages.</p>
+<p><em>« Dependent »</em> caractérise la provenance de ces informations. Tout est transmis par l’avion lui-même. Par exemple pour sa position, il la défini à partir de son système GPS embarqué avant de la transmettre. L’implication directe concerne le formatage des messages : il faut, dans un nombre de bits limités, transmettre suffisamment d’informations pour lier le message à l’avion et donner des informations suffisamment précises, et diverses (positions, vitesse, numéro de vol, …)</p>
+<h1 id="format"><a class="header" href="#format">Format</a></h1>
+<p>Ainsi, le format d’un message ADS-B se présente sous la forme suivante :</p>
+<p>Il comporte 112 bits, divisés en parties distinctes, chacune portant des informations spécifiques :</p>
 <ul>
-  <li> <p style="text-align:justify;"> <b>Source</b> : c'est le programme chargé d'intercepter les signaux ADS-B émis par les avions à 1090MHz. Il procède ensuite de les démoduler (réception sous forme de I&Qs), de les convertir en binaire et les envoit, grâce au protocole TCP, à Rustracker. </p></li>
-  <li> <p style="text-align:justify;"> <b>Rustracker</b>: c'est le programme principal, stocké sur une machine virtuelle, qui récupère les signaux sous forme binaire émis par Source, les interprète afin d'en extraire les informations sur le vol des avions (position, vitesse, altitude, numéro de vol, etc). Il écrit toutes ces informations dans un fichier geojson qui sera lu par Trackui. </p> </li>
-  <li><p style="text-align:justify;"> <b>Trackui</b>: il s'agit de l'interface graphique de notre travail, sous forme de page web, herbergée par un serveur nginx sur la machine virtuelle évoquée plus tôt. Elle consulte à intervalles de temps régulier le fichier geojson mis à disposition par Rustracker et affiche les avions en conséquences sur la carte, les autres données concernant les avions sont regroupées dans un tableau à côté de la carte.</p>
+<li>
+<p><strong>[0 ; 4] : Downlink format :</strong> C’est le format de transmission, on ne s’intéresse ici qu’au 17, qui est le plus largement utilisé dans l’aviation civile.</p>
 </li>
-</ul> 
-</p>
+<li>
+<p><strong>[5 ; 7] : Capabilty :</strong> C’est un champ à utilisation technique que l’on traite techniquement du programme mais dont l’utilité pour un utilisateur lambda est faible, le résultat n’est dans pas présenté dans l’interface graphique (il permet d’obtenir notamment l’importance des tourbillons marginaux créés par l’avion, et qui sont un phénomène dangereux pour un autre avion situé derrière, et est donc utilisé par les contrôleurs pour assurer une bonne séparation.</p>
+</li>
+<li>
+<p><strong>[8 ; 31] : adresse ICAO :</strong> C’est l’élément le plus important du message, il s’agit d’un code hexadécimal et unique à l’avion tout au long de sa « vie ». Ce code étant unique et se trouvant dans tous les messages, c’est lui qui va permettre de lier des messages reçus indépendamment et à l’avion émetteur.</p>
+</li>
+<li>
+<p><strong>[32 ; 87] : data :</strong> Ces 56 bits sont le cœur du message, c’est eux qui transportent l’information spécifique au vol à l’instant t. Les 5 premiers correspondent au « Type Code », qui nous indique le type de data reçu. Il peut s’agit de la vitesse, de la position, ou du numéro de vols, dont leurs formatages peuvent varier (nous le détaillerons plus tard).</p>
+</li>
+<li>
+<p><strong>[88 ; 111] : CRC :</strong> Ces derniers bits correspondent au contrôle de redondance cyclique (CRC). Ils sont calculés à l’émission de façon à ce qu’une opération logique sur l’ensemble des 112bits donne un résultat spécifique, permettant ainsi de valider l’intégrité du message reçu. En effet, on reçoit de nombreux messages mais entre l’avion et notre antenne de réceptions, ils ont pu est dégradés d’une telle façon que l’information transportée est erronée. Maintenant que l’on connait ce qu’est un message ADS-B, nous allons pouvoir étudier tout son cheminement. Nous utiliserons par la suite le terme anglais de Squitter pour désigner un tel message.</p></p>
+</li>
+</ul>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="prerequis.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="prev" href="architecture.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="source/reception.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -182,7 +179,10 @@ ainsi que connaître les informations sur le vol (altitude, vitesse, moteur, ...
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="prerequis.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="prev" href="architecture.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="source/reception.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

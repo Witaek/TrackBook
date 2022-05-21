@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Rustracker</title>
+        <title>Source</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content=" The Trackbook describes the structures and goals of the RusTracker project">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="../contexte.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="../source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="../source/setup.html"><strong aria-hidden="true">5.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="../rustracker/index.html" class="active"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="../rustracker/position.html"><strong aria-hidden="true">7.</strong> Position</a></li><li class="chapter-item expanded "><a href="../rustracker/vitesse.html"><strong aria-hidden="true">8.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="../rustracker/callsign.html"><strong aria-hidden="true">9.</strong> callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="../trackui/index.html"><strong aria-hidden="true">10.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="../trackui/vm.html"><strong aria-hidden="true">11.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../conclusion.html">Conclusion</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="../contexte.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="../source/reception.html" class="active"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="../source/setup.html"><strong aria-hidden="true">5.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="../rustracker/index.html"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="../rustracker/position.html"><strong aria-hidden="true">7.</strong> Position</a></li><li class="chapter-item expanded "><a href="../rustracker/vitesse.html"><strong aria-hidden="true">8.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="../rustracker/callsign.html"><strong aria-hidden="true">9.</strong> callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="../trackui/index.html"><strong aria-hidden="true">10.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="../trackui/vm.html"><strong aria-hidden="true">11.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../conclusion.html">Conclusion</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,36 +134,31 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="rustracker"><a class="header" href="#rustracker">Rustracker</a></h1>
-<p style="text-align:justify;">Le serveur est chargé du traitement des messages binaires qui sont reçus par une ou plusieurs sources.
-<p>Lorsque l’on reçoit un squitter, on commence par le découper dans le stocker sous forme de struct squitter, qui dispose de méthode permettant d’en récupérer les différentes sections.</p>
-<p>A partir de son code OACI, on va associer le squitter à un nouvel objet avion (la struct plane), qui a pour attribut l’ensemble des informations utiles associées à un avion. Chaque avion sera ensuite stocké dans une hashmap ayant pour clef son code OACI. Associé un nouveau squitter reçu à un avion déjà existant dans notre structure de donnée sera alors plus efficace.</p>
-<p>Une fois le squitter lié à l’avion, on en extrait les informations. En l’occurrence nous traitons 3 types de données : altitude, vitesse, et numéro de vol. Nous allons détailler séparément leurs analyses dans la section suivante.</p>
-<h1 id="opérationabilité"><a class="header" href="#opérationabilité">Opérationabilité</a></h1>
-<p>Maintenant que nous avons une structure de donnée avec toutes les informations exploitables, il faut pouvoir la rendre opérationnelle, c’est-à-dire que l’on soit en mesure de créer une carte interactive des avions. Nous avons fait le choix que le programme génère un geojson qui pourra être lu de manière passive par notre interface graphique.</p>
-<p>Pour ce faire, on fait face à plusieurs enjeux :</p>
-<ul>
-<li>
-<p>Pouvoir générer ce geojson à intervalle régulier, sans interrompre le processus de réception
-des squitter.</p>
-</li>
-<li>
-<p>Être capable de retirer les avions qui sortis de notre champ de réception depuis un certains
-temps.</p>
-</li>
-</ul>
-<p>Pour ces deux problèmes, nous avons décider d’utiliser de la programmation asynchrone. Deux threads vont être capables de communiquer avec le thread principal de réception des messages à travers des channels.</p>
-<p>Le premier thread est chargé de gérer la durée de vie des avions. Il envoie un signal à notre thread principal toute les 30 secondes, dès que le thread principal reçoit ce signal, il va parcourir la hashmap contenant chaque avion, et mesurer depuis combien de temps il n’a pas reçu de nouveaux messages depuis plus de 30 secondes, alors on considère que l’avion est sorti de notre champ de réception, et est donc retiré de notre mémoire.</p>
-<p>Le second thread lui génère le geojson. Un package de Rust spécialement créer pour les geojson propose une struct dans laquelle on stocke nos avions (avec moins d’information que notre struct plane détaillé plutôt, on ne mettra dans le geojson seulement celle utiles à l’interface graphique) et qui grâce à une méthode de conversion en string de cette struct, nous permet d’éditer le contenu de notre plane.geojson.</p></p>
+                        <h1 id="source"><a class="header" href="#source">Source</a></h1>
+<p style="text-align:justify;">La réception des squitter se fait de façon indépendante de leur traitement dans un programme Rust nommé « Source ».
+<p>Le principe est d’installer ce programme sur une station (dans notre cas un raspberry pi) dont le but est de capter le signal et de le transmettre au serveur.</p>
+<p>Le squitter est d’abords émis par l’avion omnidirectionnellement sur la fréquence de 1090MH, il voyage alors à travers l’atmosphère avant d’être réceptionné par notre antenne. L’onde de 1090Mhz est alors échantillonnée à l’aide un Dongle DVB-T pourvu d’une puce <strong>RTL2832U</strong>. Originellement destiné à être utilisé pour la réception de la TNT (≈20€), l’utilisations de drivers différents permet de le convertir en système SDR (Software Define Radio), dont on peut choisir la fréquence de réception.</p>
+<p>Nous avons fait le choix d’utiliser Soapy SDR (disponible en package pour Rust), qui permet à l’aide de simple ligne de code de se connecter au dongle et de choisir le taux d’échantillonnage, la fréquence de réception et le gain.</p>
+<p>L’onde est modulée en quadrature (I&amp;Q), le résultat est donc sous forme de complexe, que l’on démodule en prenant le module. A partir de là, on dispose de l’onde, toutefois il faut encore identifier les messages ads-b situés dans l’échantillon. Ils sont échantillonnés à une fréquence <code>fe = 2.10&lt;sup&gt;6&lt;/sup&gt; Hz (soit Te = 500 ns)</code>, sachant qu’il faut deux amplitudes pour coder un bit, la durée totale d’un message est de 112 microsecondes. Pour identifier le début du squitter on s’appuie sur la détection du préambule. Il s’agit d’un motif
+caractéristique (cf. image). Il existe plusieurs moyens de détecter un préambule (cf. bibliographie), nous avons utiliser la détection logique du préambule. Le but de cette méthode est d’identifier par des opérations logiques (&lt;, &gt;) les successions d’amplitudes sur l’onde s’apparentant au motif (cf. figure préambule)</p>
+<p><img src="images/preambule.jpg" alt="préambule" /></p>
+<p>Pour ce faire, on parcourt l’échantillon de l’onde, puis à partir de l’amplitude [i], on établie une moyenne des valeurs « haute » ([i], [i+2], [i+7], [i+9]), puis on vérifie que toutes les autres valeurs jusqu’à [i+15] sont inférieures aux valeurs hautes et vérifient les bonnes variations d’amplitudes.</p>
+<p>Dès que l’on identifie un préambule, on stocke les 224 points suivants de l’échantillon pour les convertir en binaire selon la méthode suivante :
+Chaque paire de points successives et d’amplitudes (A1, A2) définit un unique bit b tel que si A1&gt;A2 alors b = 1, sinon b=0.</p>
+<p>Nous obtenons enfin les 112 bits.</p>
+<p>Dès lors, nous sommes en mesure de vérifier l’intégrité du message à l’aide du CRC.</p>
+<p>Ce dernier se représente sous la forme d’un polynôme :</p>
+<p><code>𝑃(𝑥)= 𝑥&lt;sup&gt;24&lt;/sup&gt; + 𝑥&lt;sup&gt;23&lt;/sup&gt; + 𝑥&lt;sup&gt;22&lt;/sup&gt; + 𝑥&lt;sup&gt;21&lt;/sup&gt; + 𝑥&lt;sup&gt;20&lt;/sup&gt; + 𝑥&lt;sup&gt;19&lt;/sup&gt; + 𝑥&lt;sup&gt;18&lt;/sup&gt; + 𝑥&lt;sup&gt;17&lt;/sup&gt; + 𝑥&lt;sup&gt;16&lt;/sup&gt; + 𝑥&lt;sup&gt;15&lt;/sup&gt; + 𝑥&lt;sup&gt;14&lt;/sup&gt; + 𝑥&lt;sup&gt;13&lt;/sup&gt; + 𝑥&lt;sup&gt;12&lt;/sup&gt; + 𝑥&lt;sup&gt;10&lt;/sup&gt; + 𝑥&lt;sup&gt;3&lt;/sup&gt; + 1</code></p>
+<p>Le message binaire est alors transmis au serveur à l’aide de la bibliothèque de messagerie asynchrone zero-mq.</p></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../source/setup.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../contexte.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../rustracker/position.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../source/setup.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -172,10 +167,10 @@ temps.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../source/setup.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../contexte.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../rustracker/position.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../source/setup.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
