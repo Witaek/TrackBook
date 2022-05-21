@@ -1,10 +1,12 @@
 # Format
 
-The conception can be divided on three greats parts:
+Notre projet s'est divisé en trois grande partie :
 
-1. The source aquisition.
-1. The main code.
-1. The user interface.
+1. La réception des messages : Source
+2. Leur traitement : Rustracker
+3. Leur affichage dans une interface graphique : Trackui
 
-![Diagramme Séquentiel](images/diag_seq.png)
+L'intéraction entre ces trois parties est présentée dans le diagramme suivant qui facilitera la compréhension de l'architecture du projet que nous allons vous présenter.
+
+![Diagramme rustracker](images/rustracker.png)
 
