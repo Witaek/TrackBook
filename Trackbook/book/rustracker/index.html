@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="../source/setup.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="../rustracker/index.html" class="active"><strong aria-hidden="true">4.</strong> Rustracker</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="../trackui/index.html"><strong aria-hidden="true">5.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="../trackui/vm.html"><strong aria-hidden="true">6.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../conclusion.html">Conclusion</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="../contexte.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="../source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="../source/setup.html"><strong aria-hidden="true">5.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="../rustracker/index.html" class="active"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="../rustracker/position.html"><strong aria-hidden="true">7.</strong> Position</a></li><li class="chapter-item expanded "><a href="../rustracker/vitesse.html"><strong aria-hidden="true">8.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="../rustracker/callsign.html"><strong aria-hidden="true">9.</strong> callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="../trackui/index.html"><strong aria-hidden="true">10.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="../trackui/vm.html"><strong aria-hidden="true">11.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../conclusion.html">Conclusion</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,7 +142,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="rustracker"><a class="header" href="#rustracker">Rustracker</a></h1>
+<p style="text-align:justify;">Le serveur est chargé du traitement des messages binaires qui sont reçus par une ou plusieurs sources.
+<p>Lorsque l’on reçoit un squitter, on commence par le découper dans le stocker sous forme de struct squitter, qui dispose de méthode permettant d’en récupérer les différentes sections.</p>
+<p>A partir de son code OACI, on va associer le squitter à un nouvel objet avion (la struct plane), qui a pour attribut l’ensemble des informations utiles associées à un avion. Chaque avion sera ensuite stocké dans une hashmap ayant pour clef son code OACI. Associé un nouveau squitter reçu à un avion déjà existant dans notre structure de donnée sera alors plus efficace.</p>
+<p>Une fois le squitter lié à l’avion, on en extrait les informations. En l’occurrence nous traitons 3 types de données : altitude, vitesse, et numéro de vol. Nous allons détailler séparément leurs analyses dans la section suivante.</p>
+<h1 id="opérationabilité"><a class="header" href="#opérationabilité">Opérationabilité</a></h1>
+<p>Maintenant que nous avons une structure de donnée avec toutes les informations exploitables, il faut pouvoir la rendre opérationnelle, c’est-à-dire que l’on soit en mesure de créer une carte interactive des avions. Nous avons fait le choix que le programme génère un geojson qui pourra être lu de manière passive par notre interface graphique.</p>
+<p>Pour ce faire, on fait face à plusieurs enjeux :</p>
+<ul>
+<li>
+<p>Pouvoir générer ce geojson à intervalle régulier, sans interrompre le processus de réception
+des squitter.</p>
+</li>
+<li>
+<p>Être capable de retirer les avions qui sortis de notre champ de réception depuis un certains
+temps.</p>
+</li>
+</ul>
+<p>Pour ces deux problèmes, nous avons décider d’utiliser de la programmation asynchrone. Deux threads vont être capables de communiquer avec le thread principal de réception des messages à travers des channels.</p>
+<p>Le premier thread est chargé de gérer la durée de vie des avions. Il envoie un signal à notre thread principal toute les 30 secondes, dès que le thread principal reçoit ce signal, il va parcourir la hashmap contenant chaque avion, et mesurer depuis combien de temps il n’a pas reçu de nouveaux messages depuis plus de 30 secondes, alors on considère que l’avion est sorti de notre champ de réception, et est donc retiré de notre mémoire.</p>
+<p>Le second thread lui génère le geojson. Un package de Rust spécialement créer pour les geojson propose une struct dans laquelle on stocke nos avions (avec moins d’information que notre struct plane détaillé plutôt, on ne mettra dans le geojson seulement celle utiles à l’interface graphique) et qui grâce à une méthode de conversion en string de cette struct, nous permet d’éditer le contenu de notre plane.geojson.</p></p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -151,7 +172,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../trackui/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../rustracker/position.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -165,7 +186,7 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../trackui/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../rustracker/position.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Machine Virtuelle</title>
+        <title>Vitesse</title>
 
 
         <!-- Custom HTML head -->
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="../contexte.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="../source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="../source/setup.html"><strong aria-hidden="true">5.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="../rustracker/index.html"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="../rustracker/position.html"><strong aria-hidden="true">7.</strong> Position</a></li><li class="chapter-item expanded "><a href="../rustracker/vitesse.html"><strong aria-hidden="true">8.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="../rustracker/callsign.html"><strong aria-hidden="true">9.</strong> callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="../trackui/index.html"><strong aria-hidden="true">10.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="../trackui/vm.html" class="active"><strong aria-hidden="true">11.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../conclusion.html">Conclusion</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="../prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="../architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="../contexte.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="../source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="../source/setup.html"><strong aria-hidden="true">5.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="../rustracker/index.html"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="../rustracker/position.html"><strong aria-hidden="true">7.</strong> Position</a></li><li class="chapter-item expanded "><a href="../rustracker/vitesse.html" class="active"><strong aria-hidden="true">8.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="../rustracker/callsign.html"><strong aria-hidden="true">9.</strong> callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="../trackui/index.html"><strong aria-hidden="true">10.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="../trackui/vm.html"><strong aria-hidden="true">11.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Test Results</li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../conclusion.html">Conclusion</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,17 +142,75 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="virtual-machine"><a class="header" href="#virtual-machine">Virtual Machine</a></h1>
+                        <h1 id="vitesse"><a class="header" href="#vitesse">Vitesse</a></h1>
+<p>Les messages portant les informations de vitesses ont un type-code égal à 19.</p>
+<p>Les messages de vitesse sont contitués de la manière suivante : </p>
+<table><thead><tr><th></th><th>MSG</th><th>BITS</th></tr></thead><tbody>
+<tr><td><strong>Type Code</strong></td><td>1-5</td><td>5</td></tr>
+<tr><td><strong>Sub-Type</strong></td><td>6-8</td><td>3</td></tr>
+<tr><td><strong>Intent change flag</strong></td><td>9</td><td>1</td></tr>
+<tr><td><strong>IFR capability flag</strong></td><td>10</td><td>1</td></tr>
+<tr><td><strong>Navigation uncertainty category for velocity</strong></td><td>11-13</td><td>3</td></tr>
+<tr><td><strong>Sub-Type specific fields</strong></td><td>14-35</td><td>22</td></tr>
+<tr><td><strong>Source bit for vertical rate</strong></td><td>36</td><td>1</td></tr>
+<tr><td><strong>Sign bit for vertical rate</strong></td><td>37</td><td>1</td></tr>
+<tr><td><strong>Vertical rate</strong></td><td>38-46</td><td>9</td></tr>
+<tr><td><strong>Reserved</strong></td><td>47-48</td><td>2</td></tr>
+<tr><td><strong>Sign bit for GNSS and Baro altitudes difference</strong></td><td>49</td><td>1</td></tr>
+<tr><td><strong>Difference between GNSS and Baro altitudes</strong></td><td>50-56</td><td>7</td></tr>
+</tbody></table>
+<p>Dans le cadre de notre travail, tous ces champs ne sont pas utiles. On s'interresse particulièrement aux champs concernant la vitesse, la vitesse verticale ainsi que l'angle de piste des avions.</p>
+<p>Les différents sous-types (Sub-type) permettent de distinguer les types de vitesses enregistrés ainsi que les types des avions (subsonniques et supersonniques).</p>
+<table><thead><tr><th><strong>Sub-Type</strong></th><th>Type vitesse</th><th>Type avion</th></tr></thead><tbody>
+<tr><td><strong>1</strong></td><td>GS</td><td>Subsonnic</td></tr>
+<tr><td><strong>2</strong></td><td>GS</td><td>Supersonnic</td></tr>
+<tr><td><strong>3</strong></td><td>TAS or IAS</td><td>Subsonnic</td></tr>
+<tr><td><strong>4</strong></td><td>TAS or IAS</td><td>Supersonnic</td></tr>
+</tbody></table>
+<p>On distingue plusieurs types de vitesses : </p>
+<p style="text-align:justify;">
+<ul>
+  <li> <p style="text-align:justify;"> <b>Indicated Air Speed (IAS) </b> = vitesse indiquée, c'est la vitesse directement lue dans le cockpit de l'avion, elle est mesurée grâce à des capteurs de pression et varie donc en fonction de l'altitude (baisse lorsque l'altitude augmente); </p></li>
+  <li> <p style="text-align:justify;"> <b>True Air Speed (TAS) </b>= c'est la vitesse réelle de l'avion relativement à l'air qui l'entoure;</p> </li>
+  <li><p style="text-align:justify;"> <b>Ground Speed (GS) </b> = vitesse au sol, il s'agot de la vitesse réelle corrigée qui prend compte des vents.</p>
+</li>
+</ul> 
+</p>
+<p style="text-align:justify;">
+<p>Puisque qu'il n'y a actuellement plus d'avions supersonniques en circulation (retrait du concorde en 2003), les sous-types 2 et 4 n'ont pour l'instant pas d'utilité. </p></p>
+<h2 id="décodage-vitesse"><a class="header" href="#décodage-vitesse">Décodage vitesse</a></h2>
+<h3 id="sous-type-1"><a class="header" href="#sous-type-1">Sous-type 1</a></h3>
+<p>La partie du message de vitesse utile pour le décodage de la vitesse sont les bits 14 à 35 décomposés de la manière suivante : </p>
+<table><thead><tr><th></th><th></th><th><strong>MSG</strong></th><th><strong>BITS</strong></th></tr></thead><tbody>
+<tr><td><strong>Direction pour la composante de vitesse E-O</strong></td><td>Dew</td><td>14</td><td>1</td></tr>
+<tr><td><strong>Composante de vitesse Est-Ouest</strong></td><td>Vew</td><td>15-24</td><td>10</td></tr>
+<tr><td><strong>Direction pour la composante de vitesse N-S</strong></td><td>Dns</td><td>25</td><td>1</td></tr>
+<tr><td><strong>Composante de vitesse Nord-Sud</strong></td><td>Vns</td><td>26-35</td><td>10</td></tr>
+</tbody></table>
+<p style="text-align:justify;">
+<p>On calcule la vitesse à partir des composantes Vew et Vns ainsi que des directions Dew et Dns.</p>
+<p>On calcule également le track angle (angle de piste) qui permet d'orienter les avions sur la carte à l'aide de ces valeurs.</p>
+</p>
+<h3 id="sous-type-3"><a class="header" href="#sous-type-3">Sous-type 3</a></h3>
+<p style="text-align:justify;">
+<p>Les messages de sous-type 3 sont émis lorsque la vitesse au sol de l'avion n'est pas connue (par exemple quand le positionnement par satellite n'est pas disponible). Dans ce cas, la vitesse et le track angle sont directement encodés dans le message de la manière suivante : </p>
+</p>
+<table><thead><tr><th></th><th></th><th><strong>MSG</strong></th><th><strong>BITS</strong></th></tr></thead><tbody>
+<tr><td><strong>Bit de status pour le cap magnétique</strong></td><td>SH</td><td>14</td><td>1</td></tr>
+<tr><td><strong>Cap magnétique</strong></td><td>HDG</td><td>15-24</td><td>10</td></tr>
+<tr><td><strong>Type de vitesse (IA or TAS)</strong></td><td>T</td><td>25</td><td>1</td></tr>
+<tr><td><strong>Vitesse</strong></td><td>AS</td><td>26-35</td><td>10</td></tr>
+</tbody></table>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../trackui/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../rustracker/position.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../story.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../rustracker/callsign.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -162,11 +220,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../trackui/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../rustracker/position.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../story.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../rustracker/callsign.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

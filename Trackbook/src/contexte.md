@@ -1,7 +1,7 @@
 # Contexte
 
 <p style="text-align:justify;">
-Le résultat finalse présente sous forme de carte interactive des avions, toutefois, l’information a suivit un long processus avant de pouvoir être présentée sous une forme compréhensible pour l’utilisateur.
+Le résultat finale présente sous forme de carte interactive des avions, toutefois, l’information a suivit un long processus avant de pouvoir être présentée sous une forme compréhensible pour l’utilisateur.
 
 Nous allons donc nous intéresser au voyage d’un message ADS-B.
 
