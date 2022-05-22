@@ -18,7 +18,7 @@
 - [Set up](source/setup.md)
 
 # Rustracker
-- [Rustracker](rustracker/README.md)
+- [Rustracker](rustracker/rustracker.md)
 - [Position](rustracker/position.md)
 - [Vitesse](rustracker/vitesse.md)
 - [callsign](rustracker/callsign.md)
@@ -26,7 +26,7 @@
 
 # Trackui 
 
-- [Trackui](trackui/README.md)
+- [Trackui](trackui/trackui.md)
 - [Machine Virtuelle](trackui/vm.md)
 
 -----------
