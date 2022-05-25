@@ -1,6 +1,6 @@
 # Callsign
 
-<p style="text-align:justify;">Le callsign permet d'identifier un avion en vol. A la différence de l'icao, le callsign n'est pas unique, plusieurs avions effectuant le même trajet à des moments différents auront le même callsign. La donnée du callsign est contenue dans les messages dont le type-code est compris entre 1 et 4. Un tel message est structuré de la manière suivante : </p>
+<p style="text-align:justify;">Le callsign permet d'identifier un avion en vol. À la différence de l'icao, le callsign n'est pas unique, plusieurs avions effectuant le même trajet à des moments différents auront le même callsign. La donnée du callsign est contenue dans les messages dont le type-code est compris entre 1 et 4. Un tel message est structuré de la manière suivante : </p>
 
 | **Data** | **TC** | **CA** | **C1** | **C2** | **C3** | **C4** | **C5** | **C6** | **C7** | **C8** |
 |----------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
