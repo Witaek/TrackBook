@@ -61,7 +61,7 @@ Le groupe continue son apprentissage du RUST.
 
 ### Réunion du 03/03/22 (point rencontre)  
 
-* Préférable de scinder le projet en deux sous-projets : 'backend' et 'frontend'. Création du second répertoire (trackui)[https://github.com/GuilhemHnr/trackui] dans ce but précis.
+* Préférable de scinder le projet en deux sous-projets : 'backend' et 'frontend'. Création du second répertoire [trackui](https://github.com/GuilhemHnr/trackui) dans ce but précis.
 * Discussion autout de l'interface graphique : on part sur imgui avec l'utilisation de ZeroMQ pour séparer le 'backend' et le 'frontend'.
 * Réception des messages : voir le framword rtlsdr_mt (pas actualisé) sinon se tourner vers soapysdr.
 * Choix d'utiliser des array de booléens pour représenter les messages binaires plutôt que des string pour gain de mémoire.
