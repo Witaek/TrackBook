@@ -8,6 +8,8 @@
 
 # Guide d'utilisation
 
+-[Guide](guide.md)
+
 # Contexte
 
 - [Set up](contexte.md)
@@ -15,7 +17,6 @@
 # Source
 
 - [Source](source/reception.md)
-- [Set up](source/setup.md)
 
 # Rustracker
 - [Rustracker](rustracker/rustracker.md)
@@ -28,11 +29,6 @@
 
 - [Trackui](trackui/trackui.md)
 - [Machine Virtuelle](trackui/vm.md)
-
------------
-
-# Test Results
-
 
 -----------
 
