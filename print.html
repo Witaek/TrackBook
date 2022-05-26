@@ -401,11 +401,98 @@ temps.</p>
 <p style="text-align:justify;">
 À chaque nouvelle réception des données du geojson, on vide alors ce groupe de calque afin de le remplir de nouveau avec les informations actualisées.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="virtual-machine"><a class="header" href="#virtual-machine">Virtual Machine</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="storyline"><a class="header" href="#storyline">Storyline</a></h1>
-<p>The original retro planning was:</p>
+<p>Le rétro planning original était:</p>
 <p><img src="images/retroplan.png" alt="Retro Planning" /></p>
-<p>But over the project difficulties forced us to change the devellopment organization.</p>
-<p>During the first meeting, on 27/01/22, the team discuss about the objectives about the project and the reports. The software structure has also been determined that day.
-We chos the Rust programming language because it's </p>
+<p>Mais des difficultés son apparu pendant le projet, ce qui nous a forcé à le modifier légèrement.</p>
+<hr />
+<h3 id="réunion-du-270122"><a class="header" href="#réunion-du-270122">Réunion du 27/01/22</a></h3>
+<p>Création du repertoire Git (licence GNU GPL v3).
+Discussion sur nos objectifs concernant le projet, livrable minimal, livrable amélioré.
+Langage : RUST (formation en cours) plus compliqué à prendre en main que Java/Python mais plus optimisé pour notre projet.</p>
+<p><strong>Discussion sur la structure :</strong></p>
+<p>--&gt; Classe radar :</p>
+<ul>
+<li>Qui hérite de thread</li>
+<li>S'éxécute à l'infini</li>
+<li>Reçoit des essages en permanence et créée un objet avion dès qu'il est détecté</li>
+<li>Extrait le message en cherchant le préambule classique de l'ADS-B</li>
+</ul>
+<p>--&gt; Classe Avion :</p>
+<ul>
+<li>Message en binaire</li>
+<li>Data : 56 bits, soit la vitesse, soit le numéro de vol, soit les coordonnées </li>
+<li>Traduit les données </li>
+<li>Crée une carte toutes les X secondes</li>
+</ul>
+<hr />
+<h3 id="réunion-du-100222"><a class="header" href="#réunion-du-100222">Réunion du 10/02/22</a></h3>
+<p>Discussion autour du projet, notamment autour de la structure du projet ainsi que des grandes étapes, et autour du rétroplanning que nous allons présenter dans le premier livrable. </p>
+<p>Début du code de fonctions simples pour prendre en main RUST : </p>
+<ul>
+<li>Une fonction qui découpe un message binaire de 56 bits afin de récupérer les sections de bits correspondant aux informations sur le vol</li>
+<li>Une fonction qui gère la base de données contenant les informations relatives aux avions (modèle, moteur, etc)</li>
+</ul>
+<hr />
+<h3 id="réunion-du-170222"><a class="header" href="#réunion-du-170222">Réunion du 17/02/22</a></h3>
+<p>Discussion sur le livrable 1 à rendre dans la semaine.
+Écriture de la présentation du projet avec les objectifs (livrable minimal et idéal), diagramme de séquence et rétroplanning.<br />
+La fonction callsign() qui découpe et traduit le message de 56 bits.
+Le groupe continue son apprentissage du RUST.</p>
+<hr />
+<h3 id="réunion-du-240222"><a class="header" href="#réunion-du-240222">Réunion du 24/02/22</a></h3>
+<ul>
+<li>Le premier livrable a été téléversé (18/02) sur moodle.</li>
+<li>Code des fonctions permettant d'extraire la position (latitude, longitude) du message.</li>
+<li>Discussion pour l'interface graphique : nous allons commencer à regarder imgui.</li>
+</ul>
+<hr />
+<h3 id="réunion-du-030322-point-rencontre"><a class="header" href="#réunion-du-030322-point-rencontre">Réunion du 03/03/22 (point rencontre)</a></h3>
+<ul>
+<li>Préférable de scinder le projet en deux sous-projets : 'backend' et 'frontend'. Création du second répertoire (trackui)[https://github.com/GuilhemHnr/trackui] dans ce but précis.</li>
+<li>Discussion autout de l'interface graphique : on part sur imgui avec l'utilisation de ZeroMQ pour séparer le 'backend' et le 'frontend'.</li>
+<li>Réception des messages : voir le framword rtlsdr_mt (pas actualisé) sinon se tourner vers soapysdr.</li>
+<li>Choix d'utiliser des array de booléens pour représenter les messages binaires plutôt que des string pour gain de mémoire.</li>
+<li>Discussion autour du livrable 2 à rendre la semaine d'après.</li>
+</ul>
+<hr />
+<h3 id="réunion-du-160322-point-rencontre"><a class="header" href="#réunion-du-160322-point-rencontre">Réunion du 16/03/22 (point rencontre)</a></h3>
+<ul>
+<li>Discussion autour des bases de données : se tourner vers SQLLite3 plutôt.</li>
+<li>Clarifier le code aux endroits où il devient un peu lourd et peu intuitif.</li>
+<li>Regarder des librairies de logging pour éventuellement générer des logs.</li>
+<li>Problèmes réglé pour imgui.</li>
+<li>Discussion autour de l'interface graphique, il faut choisir entre :
+<ul>
+<li>imgui qui fonctionnerait avec ZeroMQ : il faut chercher comment générer une carte (openstreetmap), les tiles</li>
+<li>interface web avec HTML/CSS, Javascript : utilisation de leaflet pour générer facilement une carte, utiliser des websockets pour communiquer entre back/front</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="réunion-du-29032022-rapide-"><a class="header" href="#réunion-du-29032022-rapide-">Réunion du 29/03/2022 (rapide) :</a></h3>
+<ul>
+<li>Choix d'utiliser Yew et leaflet-rs pour l'interface graphique</li>
+<li>Prise en main de Yew et leaflet-rs, mais beaucoup de difficultés sont rencontrées avec l'utilisation de cette bibliothèque.</li>
+<li>ZeroMQ : grâce à l'exemple fournit par  Rémy Grünblatt un code minimal d'emission/reception serveur/client a été mis au point et fonctionne correctement (pour l'instant en local).</li>
+</ul>
+<h4 id="objectifs-pour-la-semaine-prochaine-"><a class="header" href="#objectifs-pour-la-semaine-prochaine-">Objectifs pour la semaine prochaine :</a></h4>
+<ul>
+<li>Réussir à afficher une icone d'avion et à gérer sa position sur la carte</li>
+<li>Gérer proprement la réception des messages côté client</li>
+<li>Gérer l'affichage des données côté client</li>
+</ul>
+<hr />
+<h3 id="réunion-du-14042022-point-rencontre-"><a class="header" href="#réunion-du-14042022-point-rencontre-">Réunion du 14/04/2022 (point rencontre) :</a></h3>
+<ul>
+<li>Discuission autour de l'interface graphique, notamment de Yew qui nous pose plusieurs problèmes : on laisse tomber le rust pour le web et on part sur du web pur / javascript.</li>
+<li>Discussion autour de l'organisation du projet : il faut que chacun s'organise pour participer au projet (frontend, backend, connexion à internet, rapport, slides soutenance etc...).</li>
+<li>Discussion autour de la forme du rapport : possibilité d'utiliser des fichiers markdown puis de les convertir avec pandoc.</li>
+<li>La redistribution des rôles :<br />
+--&gt; Guilhem : termine le backend côté web<br />
+--&gt; Romain : s'occupe du côté serveur, mise en place d'une vm pour pouvoir faire passer les sockets par internet et utiliser plusieurs antennes<br />
+--&gt; Artur : s'occupe du frontend, apparence de l'interface web<br />
+--&gt; Bastian : rédige le rapport sous la forme de rustbook</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h1>
 <p>All the project goals have been completed in time. The software is completely working, the managed to learn a new programming language and to overcom difficulties during the devellopment.</p>
 <p>Les grands objectifs du projet sont remplis et notre livrable final est opérationnel. Ce projet aura été très enrichissant dans la mesure où nous avons découvert le language de programmation RUST et nous avons eu a traiter diverses problématiques (traitement du signal, interface web, serveur sur machine virtuelle, programmation asynchrone, communications tcp, etc).</p>
