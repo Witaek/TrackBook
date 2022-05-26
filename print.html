@@ -298,7 +298,8 @@ Chaque paire de points successives et d’amplitudes (A1, A2) définit un unique
 <code>
 𝑃(𝑥)= 𝑥<sup>24</sup> + 𝑥<sup>23</sup> + 𝑥<sup>22</sup> + 𝑥<sup>21</sup> + 𝑥<sup>20</sup> + 𝑥<sup>19</sup> + 𝑥<sup>18</sup> + 𝑥<sup>17</sup> + 𝑥<sup>16</sup> + 𝑥<sup>15</sup> + 𝑥<sup>14</sup> + 𝑥<sup>13</sup> + 𝑥<sup>12</sup> + 𝑥<sup>10</sup> + 𝑥<sup>3</sup> + 1
 </code>
-<p style="text-align:justify;">Le message binaire est alors transmis au serveur à l’aide de la bibliothèque de messagerie asynchrone zero-mq.</p><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="rustracker-1"><a class="header" href="#rustracker-1">Rustracker</a></h1>
+<p style="text-align:justify;">Le message binaire est alors transmis au serveur à l’aide de la bibliothèque de messagerie asynchrone zero-mq.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="set-up"><a class="header" href="#set-up">Set up</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rustracker-1"><a class="header" href="#rustracker-1">Rustracker</a></h1>
 <p style="text-align:justify;">Le serveur est chargé du traitement des messages binaires qui sont reçus par une ou plusieurs sources. </p>
 <p style="text-align:justify;">Lorsque l’on reçoit un squitter, on commence par le découper et le stocker sous forme de struct squitter, qui dispose de méthodes permettant d’en récupérer les différentes sections.</p>
 <p style="text-align:justify;">À partir de son code OACI, on va associer le squitter à un nouvel objet avion (la struct plane), qui a pour attribut l’ensemble des informations utiles associées à un avion. Chaque avion sera ensuite stocké dans une hashmap ayant pour clef son code OACI. Associer un nouveau squitter reçu d'un avion déjà existant dans notre structure de donnée sera alors plus efficace.</p>
