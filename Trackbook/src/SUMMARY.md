@@ -21,10 +21,10 @@
 
 # Rustracker
 - [Rustracker](rustracker/rustracker.md)
-- [Position](rustracker/position.md)
-- - [Erreurs](rustracker/erreurs.md)
-- [Vitesse](rustracker/vitesse.md)
-- [Callsign](rustracker/callsign.md)
+    - [Position](rustracker/position.md)
+        - [Erreurs](rustracker/erreurs.md)
+    - [Vitesse](rustracker/vitesse.md)
+    - [Callsign](rustracker/callsign.md)
 
 
 # Trackui 
