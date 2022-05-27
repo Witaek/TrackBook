@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="contexte.html"><strong aria-hidden="true">3.</strong> Set up</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="rustracker/rustracker.html"><strong aria-hidden="true">5.</strong> Rustracker</a></li><li class="chapter-item expanded "><a href="rustracker/position.html"><strong aria-hidden="true">6.</strong> Position</a></li><li class="chapter-item expanded "><a href="rustracker/vitesse.html"><strong aria-hidden="true">7.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="rustracker/callsign.html"><strong aria-hidden="true">8.</strong> Callsign</a></li><li class="chapter-item expanded affix "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="trackui/trackui.html"><strong aria-hidden="true">9.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="trackui/vm.html"><strong aria-hidden="true">10.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="conclusion.html">Conclusion</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="contexte.html"><strong aria-hidden="true">3.</strong> ADS-B</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="source/infrastructure.html"><strong aria-hidden="true">5.</strong> Infrastructure</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="rustracker/rustracker.html"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rustracker/position.html"><strong aria-hidden="true">6.1.</strong> Position</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rustracker/erreurs.html"><strong aria-hidden="true">6.1.1.</strong> Erreurs</a></li></ol></li><li class="chapter-item expanded "><a href="rustracker/vitesse.html"><strong aria-hidden="true">6.2.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="rustracker/callsign.html"><strong aria-hidden="true">6.3.</strong> Callsign</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="trackui/trackui.html"><strong aria-hidden="true">7.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="trackui/vm.html"><strong aria-hidden="true">8.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="conclusion.html">Conclusion</a></li><li class="chapter-item expanded affix "><a href="bibliographie.html">Bibliographie</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -298,7 +298,25 @@ Chaque paire de points successives et d’amplitudes (A1, A2) définit un unique
 <code>
 𝑃(𝑥)= 𝑥<sup>24</sup> + 𝑥<sup>23</sup> + 𝑥<sup>22</sup> + 𝑥<sup>21</sup> + 𝑥<sup>20</sup> + 𝑥<sup>19</sup> + 𝑥<sup>18</sup> + 𝑥<sup>17</sup> + 𝑥<sup>16</sup> + 𝑥<sup>15</sup> + 𝑥<sup>14</sup> + 𝑥<sup>13</sup> + 𝑥<sup>12</sup> + 𝑥<sup>10</sup> + 𝑥<sup>3</sup> + 1
 </code>
-<p style="text-align:justify;">Le message binaire est alors transmis au serveur à l’aide de la bibliothèque de messagerie asynchrone zero-mq.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="rustracker-1"><a class="header" href="#rustracker-1">Rustracker</a></h1>
+<p style="text-align:justify;">Le message binaire est alors transmis au serveur à l’aide de la bibliothèque de messagerie asynchrone zero-mq.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="infrastructure"><a class="header" href="#infrastructure">Infrastructure</a></h1>
+<p style="text-align:justify;">
+Comme présenté précédemment, l'architecture mise en place implique que le code de *SOURCE* soit installé sur une station, en l'occurence un raspberry, qui soit lui même connecté à une anntenne.</p>
+<p style="text-align:justify;">
+Nous l'avons mis en pratique, en installant une antenne spécialisé pour l'ADS-B sur le toit d'une maison située près de Castres dans le Tarn. Les conditions d'installation font qu'elle possède une meilleure réception vers l'Ouest (en théorie).</p>
+<p style="text-align: center;">
+<img  typeof="foaf:Image" src="source/../images/antenne_irl.jpg"  alt="" title="antenne">  
+</p>
+<p style="text-align:justify;">
+Cette antenne est alors connectée à un filtre 1090MHz (1), puis au dongle RTL-SDR (2) qui s'assure de l'échantillonage. La connexion éthernet permet de transmettre au serveur situé à Evry les messages binaires reçus.</p>
+<p style="text-align: center;">
+<img  typeof="foaf:Image" src="source/../images/source.png"  alt="" title="raspberry">  
+</p>
+<h1 id="performance-de-lantenne"><a class="header" href="#performance-de-lantenne">Performance de l'antenne</a></h1>
+<p style="text-align:justify;">
+On observe une très bonne performance de l'antenne. Assurant une bonne réception dans les 300km au sud, voir 500km</p>
+<p style="text-align: center;">
+<img  typeof="foaf:Image" src="source/../images/diagramme.png"  alt="" title="reception">  
+</p><div style="break-before: page; page-break-before: always;"></div><h1 id="rustracker-1"><a class="header" href="#rustracker-1">Rustracker</a></h1>
 <p style="text-align:justify;">Le serveur est chargé du traitement des messages binaires qui sont reçus par une ou plusieurs sources. </p>
 <p style="text-align:justify;">Lorsque l’on reçoit un squitter, on commence par le découper et le stocker sous forme de struct squitter, qui dispose de méthodes permettant d’en récupérer les différentes sections.</p>
 <p style="text-align:justify;">À partir de son code OACI, on va associer le squitter à un nouvel objet avion (la struct plane), qui a pour attribut l’ensemble des informations utiles associées à un avion. Chaque avion sera ensuite stocké dans une hashmap ayant pour clef son code OACI. Associer un nouveau squitter reçu d'un avion déjà existant dans notre structure de donnée sera alors plus efficace.</p>
@@ -318,7 +336,33 @@ temps.</p>
 </ul>
 <p style="text-align:justify;">Pour ces deux problèmes, nous avons décider d’utiliser la programmation asynchrone. Deux threads vont être capables de communiquer avec le thread principal de réception des messages à travers des channels.</p>
 <p style="text-align:justify;">Le premier thread est chargé de gérer la durée de vie des avions. Il envoie un signal à notre thread principal toute les 30 secondes, dès que le thread principal reçoit ce signal, il va parcourir la hashmap contenant chaque avion, et mesurer depuis combien de temps il n’a pas reçu de nouveaux messages. Si ce temps dépasse 30 secondes, alors on considère que l’avion est sorti de notre champ de réception, et est donc retiré de notre mémoire.</p>
-<p style="text-align:justify;">Le second thread lui génère le geojson. Un package de Rust spécialement créé pour les geojson propose une struct dans laquelle on stocke nos avions (avec moins d’information que notre struct plane détaillée plus tôt, on ne mettra dans le geojson que les données utiles à l’interface graphique) et qui grâce à une méthode de conversion en string de cette struct, nous permet d’éditer le contenu de notre fichier plane.geojson.</p><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="vitesse"><a class="header" href="#vitesse">Vitesse</a></h1>
+<p style="text-align:justify;">Le second thread lui génère le geojson. Un package de Rust spécialement créé pour les geojson propose une struct dans laquelle on stocke nos avions (avec moins d’information que notre struct plane détaillée plus tôt, on ne mettra dans le geojson que les données utiles à l’interface graphique) et qui grâce à une méthode de conversion en string de cette struct, nous permet d’éditer le contenu de notre fichier plane.geojson.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="compact-position-reporting-cpr-"><a class="header" href="#compact-position-reporting-cpr-">Compact Position Reporting (CPR) :</a></h1>
+<p style="text-align:justify;">La contrainte des 56 bits de données dans le cadre de la position peut être problématique pour un obtenir une précision suffisante. En effet, le rôle numéro 1 du contrôle aérien est d’assurer la sécurité des avions par une bonne séparation de ceux-ci. Or pour ce faire, il faut avoir l’altitude de l’avion, sa latitude, et sa longitude.</p>
+<p style="text-align:justify;">Pour le codage de la latitude/longitude, en pratique une précision suffisante (environs 5 mètres près) est atteinte en 45 bits, or seul 35 sont utilisés. Et cela grâce à l’algorithme de compact position reporting.</p>
+<p style="text-align:justify;">Cet algorithme repose sur le découpage du globe en zone longitudinale et latitudinal. On procède à deux découpages légèrement différents, ce qui donne deux grilles que l’on nomme pair et impaire. Ainsi, au lieu d’encoder la position sur un seul message, seule la position à l’intérieur d’une case d’une grille est codée. On transmet alors cette position « interne » à la grille sur un message qui indique la parité de la grille, puis en couplant les messages de positions pair et impair, nous parvenons à identifier la position réelle de l’avion.</p>
+<p style="text-align:justify;">Un exemple simple de l’idée qu’utilise l’algorithme CPR peut se faire à l’aide de surface « simple » de 16x16, on divise cette surface par une grille de 5x5, notre grille paire, et une grille de 4x4, notre grille impaire.</p>
+<p style="text-align:justify;">La position que l’on souhaite obtenir est de (x=7 ; y=9). Cette position se trouve aux coordonnées (x = 2 ; y=4) d’une case de la grille paire et dans (x= 3 ; y = 1) de la grille impaire. On retrouve la position en superposant toutes les possibilités des deux grilles, et en obtenant une unique correspondance entre les deux.</p>
+<p style="text-align: center;">
+<img  typeof="foaf:Image" src="rustracker/../images/cpr.png"  alt="" title="cpr">  
+</p>
+<p style="text-align:justify;">En pratique, l’algorithme CPR commence par décoder dans cet ordre l’index de la zone latitudinale, la latitude, puis l’index de la zone longitudinale puis la longitude. En effet, on cherche la position d’abords globale, c’est-à-dire identifier la « case » dans laquelle se situe l’avion.</p>
+<p style="text-align:justify;">Cette recherche qui s’effectue grâce à un message paire et impaire donne une position « globale ».</p>
+<p style="text-align:justify;">Ce premier décodage de position permet en effet de connaître la zone dans laquelle l’avion se situe. Puisque le déplacement de l’avion est continu, pour le décodage des positions suivantes, les indexes longitudinaux et latitudinaux peuvent être directement déduis de la position précédente. On utilisera alors qu’un seul message de parités quelconque.</p>
+<p style="text-align:justify;">Les messages de positions transmettent aussi l’altitude qui se décode sans algorithme particulièrement remarquable.</p>
+<p style="text-align:justify;">
+</p><div style="break-before: page; page-break-before: always;"></div><h1 id="gestion-des-erreurs-de-positions-"><a class="header" href="#gestion-des-erreurs-de-positions-">Gestion des erreurs de positions :</a></h1>
+<p style="text-align:justify;">L’algorithme de CPR présente un avantage certain. Toutefois, il peut comporter des erreurs. Ces erreurs sont principalement dû au décodage des indexes des zones de latitude et longitude, et à d’autres calculs sensibles. Principalement lors de la transition de l’avion entre deux zones distinctes.</p>
+<p style="text-align:justify;">Comme présenté par la NASA [biblio], ces erreurs sont dû à l’utilisations de nombre flottant. Leur code fournit des preuves en temps réel de leurs résultats grâce à l’ACSL.</p>
+<p style="text-align:justify;">Cependant, nous devons trouver un moyen de traiter ces erreurs lorsqu’elles surviennent. </p>
+<p style="text-align:justify;">Plusieurs solutions sont suggérées dans l’ouvrage de Junzi Sun, dont la cohérence de la position de l’avion en fonction de la portée de l’antenne. Cette solution n’est pas envisageable pour nous car les récepteurs communiquent de façon anonyme avec le serveur.</p>
+<p style="text-align:justify;">En observant les positions aberrantes que nous obtenions, on a remarqué une oscillation de la trajectoire. Nous avons donc imaginé une autre solution, qui est un test de cohérence. </p>
+<p style="text-align: center;">
+<img  typeof="foaf:Image" src="rustracker/../images/erreur.png"  alt="" title="erreur">  
+</p>
+<p style="text-align:justify;">Comme présenté postérieurement, les messages de vitesses donnent une information : le « Track angle », qui est le cap suivi par l’avion (entre 0° et 360°). Or ce cap peut aussi être obtenu par une déduction à partir des deux dernières positions connues qui créent un vecteur dont la direction est égale au cap (bien que plus imprécis).</p>
+<p style="text-align:justify;">En comparant les deux résultats obtenue sur les toutes premières positions décodées de l’avion, nous pouvons détecter ces oscillations qui sont impossible avec un cap constant et donc éliminer ces trajectoires problématiques. </p>
+<h1 id="mise-en-pratique-"><a class="header" href="#mise-en-pratique-">Mise en pratique :</a></h1>
+<p style="text-align:justify;">Cette comparaison de cap était initialement effectuée sur tous les points de la trajectoire, cependant le calcul est lourd et a entraîné un retard du serveur sur les messages reçus. Nous avons donc fait le choix de tester seulement les premières positions de l'avion.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="vitesse"><a class="header" href="#vitesse">Vitesse</a></h1>
 <p>Les messages portant les informations de vitesses ont un type-code égal à 19.</p>
 <p>Les messages de vitesse sont contitués de la manière suivante : </p>
 <table><thead><tr><th></th><th>MSG</th><th>BITS</th></tr></thead><tbody>
@@ -505,6 +549,19 @@ Le groupe continue son apprentissage du RUST.</p>
 <li><a href="https://github.com/blaaass">Bastian Larvor</a></li>
 </ul>
 <p>Un grand merci à <a href="https://github.com/rgrunbla">Rémy Grünblatt</a> pour ses conseils et son aide.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bibliographie"><a class="header" href="#bibliographie">Bibliographie</a></h1>
+<h1 id="the-1090mhz-riddle"><a class="header" href="#the-1090mhz-riddle">The 1090Mhz Riddle</a></h1>
+<p>@book{sun1090mhz,
+author = {Sun, Junzi}, 
+title = {The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals},
+publisher = {TU Delft OPEN Publishing},
+year = 2021,
+edition = 2,
+isbn = {978-94-6366-402-8},
+doi = {10.34641/mg.11}
+}</p>
+<h1 id="explication-de-la-nasa-sur-lalgorithme-cpr"><a class="header" href="#explication-de-la-nasa-sur-lalgorithme-cpr">Explication de la NASA sur l'algorithme CPR</a></h1>
+<p>https://github.com/nasa/cpr</p>
 
                     </main>
 
