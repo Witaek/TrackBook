@@ -100,7 +100,7 @@ Le groupe continue son apprentissage du RUST.
 
 ### Réunion du 14/04/2022 (point rencontre) :  
 
-* Discuission autour de l'interface graphique, notamment de Yew qui nous pose plusieurs problèmes : on laisse tomber le rust pour le web et on part sur du web pur / javascript.
+* Discussion autour de l'interface graphique, notamment de Yew qui nous pose plusieurs problèmes : on laisse tomber le rust pour le web et on part sur du web pur / javascript.
 * Discussion autour de l'organisation du projet : il faut que chacun s'organise pour participer au projet (frontend, backend, connexion à internet, rapport, slides soutenance etc...).
 * Discussion autour de la forme du rapport : possibilité d'utiliser des fichiers markdown puis de les convertir avec pandoc.
 * La redistribution des rôles :  

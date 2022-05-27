@@ -2,4 +2,4 @@ La version complète et fonctionnelle du projet peut être observée sur le lien
       
 ![Interface](images/ui.png)
 
-À droite on trouve une carte où les avions sont affichés. Et à gauche les vols avec toutes leurs informations sont listés dans un tableau.
+À gauche on trouve une carte où les avions sont affichés. Et à droite les vols avec toutes leurs informations sont listés dans un tableau.
