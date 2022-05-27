@@ -19,7 +19,7 @@ Cette antenne est alors connectée à un filtre 1090MHz (1), puis au dongle RTL-
 
 # Performance de l'antenne
 <p style="text-align:justify;">
-On observe une très bonne performance de l'antenne. Assurant une bonne réception dans les 300km au sud, voir 500km</p>
+On observe une très bonne performance de l'antenne, assurant une bonne réception dans les 300km au sud, voir 500km</p>
 
 <p style="text-align: center;">
 <img  typeof="foaf:Image" src="../images/diagramme.png"  alt="" title="reception">  

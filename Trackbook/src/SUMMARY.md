@@ -8,7 +8,7 @@
 
 # Guide d'utilisation
 
--[Guide](guide.md)
+- [Guide](guide.md)
 
 # Contexte
 
@@ -30,7 +30,6 @@
 # Trackui 
 
 - [Trackui](trackui/trackui.md)
-- [Machine Virtuelle](trackui/vm.md)
 
 -----------
 

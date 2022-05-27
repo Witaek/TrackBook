@@ -3,7 +3,7 @@
 
 ## Rust 
 
-Afin de faire tourner nos différents programmes (Source & Rustracker), il est nécessaire d'installer le gestionnaire de paquet rust "Cargo" ainsi que le gestionnaire des chaînes d'outils "rustup".
+Afin de faire fonctionner nos différents programmes (Source & Rustracker), il est nécessaire d'installer le gestionnaire de paquet rust "Cargo" ainsi que le gestionnaire des chaînes d'outils "rustup".
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -12,7 +12,7 @@ Afin de faire tourner nos différents programmes (Source & Rustracker), il est n
 ---
 ## Source
  
-<p style="text-align:justify;">Afin de faire fonctionner Source,  il est nécessaire de correctement configurer les drivers pour utiliser les antennes RTL-SDR correctement. On propose ici un guide afin d'effectuer correctement les installations nécessaires au bon fonctionnement de Source.</p>
+<p style="text-align:justify;">Afin de faire fonctionner Source,  il est nécessaire de configurer les drivers pour utiliser les dongles RTL-SDR correctement. On propose ici un guide afin d'effectuer les installations nécessaires au bon fonctionnement de Source.</p>
 
 #### Blacklist des pilotes
 
@@ -39,7 +39,7 @@ Enfin, supprimons le pilote déjà chargé.
 
 #### Installation des pilotes
 
-Commençons par installer la librairie nécessaire à l'utilisation de SoapySDR, la crate que nous utilisons afin d'utiliser les dongles rtlsdr avec notre code RUST.
+Commençons par installer la librairie nécessaire à l'utilisation de SoapySDR, le crate que nous utilisons afin d'utiliser les dongles rtlsdr avec notre code RUST.
 
     sudo apt install libsoapysdr-dev libclang-dev llvm-dev pkg-config
 
@@ -63,13 +63,13 @@ Enfin on installe le plugin Soapy pour RTL-SDR.
 
 ## Rustracker
 
-L'installation de certaines librairies est nécessaires au bon fonctionnement du programme Rustracker.
+L'installation de certaines librairies est nécessaire au bon fonctionnement du programme Rustracker.
 
 Installons d'abord une librairie permettant d'utiliser pkg-config, un programme de gestion des librairies.
 
     sudo apt install pkg-config
 
-On installe ensuite la librairie ZeroMQ que l'on utiliser pour les communications tcp entre Source et Rustracker.
+On installe ensuite la librairie ZeroMQ que l'on utilise pour les communications tcp entre Source et Rustracker.
 
     sudo apt install libzmq3-dev
 
