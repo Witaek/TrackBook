@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="contexte.html"><strong aria-hidden="true">3.</strong> ADS-B</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/reception.html"><strong aria-hidden="true">4.</strong> Source</a></li><li class="chapter-item expanded "><a href="source/infrastructure.html"><strong aria-hidden="true">5.</strong> Infrastructure</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="rustracker/rustracker.html"><strong aria-hidden="true">6.</strong> Rustracker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rustracker/position.html"><strong aria-hidden="true">6.1.</strong> Position</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rustracker/erreurs.html"><strong aria-hidden="true">6.1.1.</strong> Erreurs</a></li></ol></li><li class="chapter-item expanded "><a href="rustracker/vitesse.html"><strong aria-hidden="true">6.2.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="rustracker/callsign.html"><strong aria-hidden="true">6.3.</strong> Callsign</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="trackui/trackui.html"><strong aria-hidden="true">7.</strong> Trackui</a></li><li class="chapter-item expanded "><a href="trackui/vm.html"><strong aria-hidden="true">8.</strong> Machine Virtuelle</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="conclusion.html">Conclusion</a></li><li class="chapter-item expanded affix "><a href="bibliographie.html">Bibliographie</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="intro.html">Introduction</a></li><li class="chapter-item expanded "><a href="prerequis.html"><strong aria-hidden="true">1.</strong> Prérequis</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">2.</strong> Architecture</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Guide d'utilisation</li><li class="chapter-item expanded "><a href="guide.html"><strong aria-hidden="true">3.</strong> Guide</a></li><li class="chapter-item expanded affix "><li class="part-title">Contexte</li><li class="chapter-item expanded "><a href="contexte.html"><strong aria-hidden="true">4.</strong> ADS-B</a></li><li class="chapter-item expanded affix "><li class="part-title">Source</li><li class="chapter-item expanded "><a href="source/reception.html"><strong aria-hidden="true">5.</strong> Source</a></li><li class="chapter-item expanded "><a href="source/infrastructure.html"><strong aria-hidden="true">6.</strong> Infrastructure</a></li><li class="chapter-item expanded affix "><li class="part-title">Rustracker</li><li class="chapter-item expanded "><a href="rustracker/rustracker.html"><strong aria-hidden="true">7.</strong> Rustracker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rustracker/position.html"><strong aria-hidden="true">7.1.</strong> Position</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="rustracker/erreurs.html"><strong aria-hidden="true">7.1.1.</strong> Erreurs</a></li></ol></li><li class="chapter-item expanded "><a href="rustracker/vitesse.html"><strong aria-hidden="true">7.2.</strong> Vitesse</a></li><li class="chapter-item expanded "><a href="rustracker/callsign.html"><strong aria-hidden="true">7.3.</strong> Callsign</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Trackui</li><li class="chapter-item expanded "><a href="trackui/trackui.html"><strong aria-hidden="true">8.</strong> Trackui</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="story.html">Project Storyline</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="conclusion.html">Conclusion</a></li><li class="chapter-item expanded affix "><a href="bibliographie.html">Bibliographie</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -136,16 +136,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
-<p style="text-align:justify;">L’ADS-B (Automatic Dependent Surveillance-Broadcast) est un système de contrôle du
-trafic aérien. Un avion utilisant l’ADS-B détermine sa position par un système de positionnement satellite et
-la renvoit cette dernière (ainsi que d’autres informations sur le vol, altitude, vitesse, modèle de l’avion, etc)
-dans toutes les directions aux autres appareils disposant de l’ADS-B. Ces messages sont détectables, puis
-démodulables, par toute personne à l’aide d’une clef TNT (tuner RTL2832U, 15€), utilisée en SDR (Software Defined Radio),
-qui permet de définir les paramètres de réception, comme par exemple la fréquence,
-depuis l’ordinateur. L’objectif du projet est d’utiliser ces messages envoyés par les avions, et de proposer
-une interface graphique à l’utilisateur. Sur cette interface, on souhaite observer en temps réel l’ensemble
-des avions à portée de notre antenne ; nous souhaitons également pouvoir observer la trajectoire des avions
-ainsi que connaître les informations sur le vol (altitude, vitesse, moteur, ...).</p>
+<p style="text-align:justify;">L’ADS-B (Automatic Dependent Surveillance-Broadcast) est un système de contrôle du trafic aérien. Un avion utilisant l’ADS-B détermine sa position par un système de positionnement satellite et renvoie cette dernière (ainsi que d’autres informations sur le vol, altitude, vitesse, modèle de l’avion, etc) dans toutes les directions aux autres appareils disposant de l’ADS-B. Ces messages sont détectables, puis démodulables, par toute personne à l’aide d’une clef TNT (tuner RTL2832U, 15€), utilisée en SDR (Software Defined Radio), qui permet de définir les paramètres de réception (comme par exemple la fréquence), depuis l’ordinateur. L’objectif du projet est d’utiliser ces messages envoyés par les avions, et de proposer une interface graphique à l’utilisateur. Sur cette interface, on souhaite observer en temps réel l’ensemble des avions à portée de notre antenne et leur trajectoire, ainsi que les informations sur le vol (altitude, vitesse, moteur, ...).</p>
 <h3 id="description-du-livrable-minimal-"><a class="header" href="#description-du-livrable-minimal-">Description du livrable minimal :</a></h3>
 <ul>
 <li>Intercepter, démoduler, interpréter des signaux ADS-B envoyés par plusieurs avions</li>
@@ -161,23 +152,23 @@ ainsi que connaître les informations sur le vol (altitude, vitesse, moteur, ...
     <b> Exemple de carte recherchée (FlightRadar24) </b>
 </p>
 <h3 id="description-brève-"><a class="header" href="#description-brève-">Description brève :</a></h3>
-<p>Ce projet est décomposée en trois parties communicantes les unes avec les autres : Source, Rustracker et TrackUI.</p>
+<p>Ce projet est décomposé en trois parties communicantes les unes avec les autres : Source, Rustracker et TrackUI.</p>
 <p style="text-align:justify;">
 <ul>
-  <li> <p style="text-align:justify;"> <b>Source</b> : c'est le programme chargé d'intercepter les signaux ADS-B émis par les avions à 1090MHz. Il procède ensuite de les démoduler (réception sous forme de I&Qs), de les convertir en binaire et les envoit, grâce au protocole TCP, à Rustracker. </p></li>
+  <li> <p style="text-align:justify;"> <b>Source</b> : c'est le programme chargé d'intercepter les signaux ADS-B émis par les avions à 1090MHz. Ensuite il les démodule (réception sous forme de I&Qs), les convertis en binaire et les envoi, grâce au protocole TCP, à Rustracker. </p></li>
   <li> <p style="text-align:justify;"> <b>Rustracker</b>: c'est le programme principal, stocké sur une machine virtuelle, qui récupère les signaux sous forme binaire émis par Source, les interprète afin d'en extraire les informations sur le vol des avions (position, vitesse, altitude, numéro de vol, etc). Il écrit toutes ces informations dans un fichier geojson qui sera lu par Trackui. </p> </li>
-  <li><p style="text-align:justify;"> <b>Trackui</b>: il s'agit de l'interface graphique de notre travail, sous forme de page web, herbergée par un serveur nginx sur la machine virtuelle évoquée plus tôt. Elle consulte à intervalles de temps régulier le fichier geojson mis à disposition par Rustracker et affiche les avions en conséquences sur la carte, les autres données concernant les avions sont regroupées dans un tableau à côté de la carte.</p>
+  <li><p style="text-align:justify;"> <b>Trackui</b>: il s'agit de l'interface graphique de notre travail, sous forme de page web, herbergée par un serveur nginx sur la machine virtuelle évoquée plus tôt. Elle consulte à intervalles de temps réguliers le fichier geojson mis à disposition par Rustracker et affiche les avions en conséquences sur la carte, les autres données concernant les avions sont regroupées dans un tableau à côté de la carte.</p>
 </li>
 </ul> 
 </p><div style="break-before: page; page-break-before: always;"></div><h1 id="prérequis"><a class="header" href="#prérequis">Prérequis</a></h1>
 <h2 id="rust"><a class="header" href="#rust">Rust</a></h2>
-<p>Afin de faire tourner nos différents programmes (Source &amp; Rustracker), il est nécessaire d'installer le gestionnaire de paquet rust &quot;Cargo&quot; ainsi que le gestionnaire des chaînes d'outils &quot;rustup&quot;.</p>
+<p>Afin de faire fonctionner nos différents programmes (Source &amp; Rustracker), il est nécessaire d'installer le gestionnaire de paquet rust &quot;Cargo&quot; ainsi que le gestionnaire des chaînes d'outils &quot;rustup&quot;.</p>
 <pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 </code></pre>
 <br/>
 <hr />
 <h2 id="source"><a class="header" href="#source">Source</a></h2>
-<p style="text-align:justify;">Afin de faire fonctionner Source,  il est nécessaire de correctement configurer les drivers pour utiliser les antennes RTL-SDR correctement. On propose ici un guide afin d'effectuer correctement les installations nécessaires au bon fonctionnement de Source.</p>
+<p style="text-align:justify;">Afin de faire fonctionner Source,  il est nécessaire de configurer les drivers pour utiliser les dongles RTL-SDR correctement. On propose ici un guide afin d'effectuer les installations nécessaires au bon fonctionnement de Source.</p>
 <h4 id="blacklist-des-pilotes"><a class="header" href="#blacklist-des-pilotes">Blacklist des pilotes</a></h4>
 <p>Commençons par connecter le dongle TNT à l'ordinateur.</p>
 <p>--&gt; La commande <code>dsemg</code> permet de vérifier que le dongle est bien connecté.</p>
@@ -195,7 +186,7 @@ ainsi que connaître les informations sur le vol (altitude, vitesse, moteur, ...
 <pre><code>~ $ blacklist dvb_usb_rtl28xxu
 </code></pre>
 <h4 id="installation-des-pilotes"><a class="header" href="#installation-des-pilotes">Installation des pilotes</a></h4>
-<p>Commençons par installer la librairie nécessaire à l'utilisation de SoapySDR, la crate que nous utilisons afin d'utiliser les dongles rtlsdr avec notre code RUST.</p>
+<p>Commençons par installer la librairie nécessaire à l'utilisation de SoapySDR, le crate que nous utilisons afin d'utiliser les dongles rtlsdr avec notre code RUST.</p>
 <pre><code>sudo apt install libsoapysdr-dev libclang-dev llvm-dev pkg-config
 </code></pre>
 <p>On installe ensuite le pilote correspondant.</p>
@@ -213,11 +204,11 @@ sudo make install
 <br/>
 <hr />
 <h2 id="rustracker"><a class="header" href="#rustracker">Rustracker</a></h2>
-<p>L'installation de certaines librairies est nécessaires au bon fonctionnement du programme Rustracker.</p>
+<p>L'installation de certaines librairies est nécessaire au bon fonctionnement du programme Rustracker.</p>
 <p>Installons d'abord une librairie permettant d'utiliser pkg-config, un programme de gestion des librairies.</p>
 <pre><code>sudo apt install pkg-config
 </code></pre>
-<p>On installe ensuite la librairie ZeroMQ que l'on utiliser pour les communications tcp entre Source et Rustracker.</p>
+<p>On installe ensuite la librairie ZeroMQ que l'on utilise pour les communications tcp entre Source et Rustracker.</p>
 <pre><code>sudo apt install libzmq3-dev
 </code></pre>
 <p>Enfin, on installe deux packages nécessaires à la compilation.</p>
@@ -233,19 +224,22 @@ sudo apt install cmake</code></pre>
 <p style="text-align:justify;"> 
 L'intéraction entre ces trois parties est présentée dans le diagramme suivant qui facilitera la compréhension de l'architecture du projet que nous allons vous présenter. </p>
 <p><img src="images/rustracker.png" alt="Diagramme rustracker" /></p>
+<div style="break-before: page; page-break-before: always;"></div><p>La version complète et fonctionnelle du projet peut être observée sur le lien suivant <a href="http://rustracker.h.minet.net">RusTracker</a>.</p>
+<p><img src="images/ui.png" alt="Interface" /></p>
+<p>À droite on trouve une carte où les avions sont affichés. Et à gauche les vols avec toutes leurs informations sont listés dans un tableau.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contexte"><a class="header" href="#contexte">Contexte</a></h1>
 <p style="text-align:justify;">
-Le résultat finale présente sous forme de carte interactive des avions, toutefois, l’information a suivit un long processus avant de pouvoir être présentée sous une forme compréhensible pour l’utilisateur.</p>
+Le résultat final affiche sous forme de carte interactive des avions. Toutefois, l’information a suivi un long processus avant de pouvoir être présentée sous une forme compréhensible pour l’utilisateur.</p>
 <p>Nous allons donc nous intéresser au voyage d’un message ADS-B.</p>
 <p style="text-align:justify;"> 
-Comme nous l’avons spécifié en introduction, l’*Automatic Dependent Surveillance-Broadcast* (ADS-B) est un mode de communication qui sert au contrôle aérien.
+Comme nous l’avons spécifié en introduction, l’<b>Automatic Dependent Surveillance-Broadcast</b> (ADS-B) est un mode de communication qui sert au contrôle aérien.
 </p>
 Les deux premières lettres de l’acronyme permettent de comprendre les enjeux du formatage et du mode de transmission des messages.
 <p style="text-align:justify;"> 
-*« Automatic »* signifie que les messages sont envoyés automatiquement, il n’est pas nécessaire de solliciter le transpondeur de l’avion pour obtenir une réponse (ce qui se fait dans d’autres méthodes de contrôle aérien). Cela impose donc aussi d’avoir un programme suffisamment performant pour soutenir les flows de messages.
+<b>« Automatic »</b> signifie que les messages sont envoyés automatiquement, i.e. il n’est pas nécessaire de solliciter le transpondeur de l’avion pour obtenir une réponse (ce qui se fait dans d’autres méthodes de contrôle aérien). Cela impose donc egalement d’avoir un programme suffisamment performant pour soutenir les flows de messages.
 </p>
 <p style="text-align:justify;"> 
-*« Dependent »* caractérise la provenance de ces informations. Tout est transmis par l’avion lui-même. Par exemple pour sa position, il la défini à partir de son système GPS embarqué avant de la transmettre. L’implication directe concerne le formatage des messages : il faut, dans un nombre de bits limités, transmettre suffisamment d’informations pour lier le message à l’avion et donner des informations suffisamment précises, et diverses (positions, vitesse, numéro de vol, …)
+<b>« Dependent »</b> caractérise la provenance de ces informations. Tout est transmis par l’avion lui-même. Par exemple pour sa position, il la défini à partir de son système GPS embarqué avant de la transmettre. L’implication directe concerne le formatage des messages : il faut, dans un nombre de bits limités, transmettre suffisamment d’informations pour lier le message à l’avion et donner des informations suffisamment précises, et diverses (positions, vitesse, numéro de vol, …)
 </p>
 <h1 id="format-1"><a class="header" href="#format-1">Format</a></h1>
 <p>Ainsi, le format d’un message ADS-B se présente sous la forme suivante :</p>
@@ -255,13 +249,13 @@ Les deux premières lettres de l’acronyme permettent de comprendre les enjeux 
   <li> <p style="text-align:justify;"> 
 <p><b>[0 ; 4] : Downlink format :</b>  C’est le format de transmission, on ne s’intéresse ici qu’au 17, qui est le plus largement utilisé dans l’aviation civile. </p></li></p>
 <li> <p style="text-align:justify;"> 
-  <b>[5 ; 7] : Capability : </b> C’est un champ à utilisation technique que l’on traite techniquement dans le programme mais dont l’utilité pour un utilisateur lambda est faible, le résultat n’est donc pas présenté dans l’interface graphique (il permet d’obtenir notamment l’importance des tourbillons marginaux créés par l’avion, qui sont un phénomène dangereux pour un autre avion situé derrière, et est donc utilisé par les contrôleurs pour assurer une bonne séparation.</p> </li>
+  <b>[5 ; 7] : Capability : </b> C’est un champ à utilisation technique que l’on traite en pratique dans le programme mais dont l’utilité pour un utilisateur lambda est faible, le résultat n’est donc pas présenté dans l’interface graphique (il permet d’obtenir notamment l’importance des tourbillons marginaux créés par l’avion, qui sont un phénomène dangereux pour un autre avion situé derrière, et est donc utilisé par les contrôleurs pour assurer une bonne séparation).</p> </li>
   <li><p style="text-align:justify;"> 
   <b>[8 ; 31] : adresse ICAO :</b>C’est l’élément le plus important du message, il s’agit d’un code hexadécimal et unique à l’avion tout au long de sa « vie ». Ce code étant unique et se trouvant dans tous les messages, c’est lui qui va permettre de lier des messages reçus indépendamment à l’avion émetteur.
 </p>
 </li>
  <li><p style="text-align:justify;"> 
- <b>[32 ; 87] : data : </b> Ces 56 bits sont le cœur du message, c’est eux qui transportent l’information spécifique au vol à l’instant t. Les 5 premiers correspondent au « Type Code », qui nous indique le type de data reçu. Il peut s’agir de la vitesse, de la position, ou du numéro de vol, dont les formatages peuvent varier (nous le détaillerons plus tard).</p>
+ <b>[32 ; 87] : data : </b> Ces 56 bits sont le cœur du message, ce sont eux qui transportent l’information spécifique au vol à l’instant t. Les 5 premiers correspondent au « Type Code », qui nous indique le type de data reçu. Il peut s’agir de la vitesse, de la position, ou du numéro de vol, dont les formatages peuvent varier (nous le détaillerons plus tard).</p>
 </li>
  <li><p style="text-align:justify;"> 
  <b>[88 ; 111] : CRC :</b>Ces derniers bits correspondent au contrôle de redondance cyclique (CRC). Ils sont calculés à l’émission de façon à ce qu’une opération logique sur l’ensemble des 112 bits donne un résultat spécifique, permettant ainsi de valider l’intégrité du message reçu. En effet, on reçoit de nombreux messages mais entre l’avion et notre antenne de réception, ils ont pu être dégradés d’une telle façon que l’information transportée est erronée. </p>
@@ -269,26 +263,26 @@ Les deux premières lettres de l’acronyme permettent de comprendre les enjeux 
 </ul> 
 </p>
 <p style="text-align:justify;"> 
-Maintenant que l’on connait ce qu’est un message ADS-B, nous allons pouvoir étudier tout son cheminement. Nous utiliserons par la suite le terme anglais de Squitter pour désigner un tel message.
+Maintenant que l’on connaît ce qu’est un message ADS-B, nous allons pouvoir étudier tout son cheminement. Nous utiliserons par la suite le terme anglais de Squitter pour désigner un tel message.
 </p><div style="break-before: page; page-break-before: always;"></div><h1 id="source-1"><a class="header" href="#source-1">Source</a></h1>
 <p style="text-align:justify;">La réception des squitter se fait de façon indépendante de leur traitement dans un programme Rust nommé « Source ».
 <p>Le principe est d’installer ce programme sur une station (dans notre cas un raspberry pi) dont le but est de capter le signal et de le transmettre au serveur.</p>
 <p style="text-align:justify;">
-Le squitter est d’abord émis par l’avion omnidirectionnellement sur la fréquence de 1090MHz, il voyage alors à travers l’atmosphère avant d’être réceptionné par notre antenne. L’onde de 1090Mhz est alors échantillonnée à l’aide d'un Dongle DVB-T pourvu d’une puce <b>RTL2832U</b>. Initiallement destiné à être utilisé pour la réception de la TNT (≈20€), l’utilisation de drivers différents permet de le convertir en système SDR (Software Define Radio), dont on peut choisir la fréquence de réception.</p>
+Le squitter est d’abord émis par l’avion omnidirectionnellement sur la fréquence de 1090MHz, il voyage alors à travers l’atmosphère avant d’être réceptionné par notre antenne. L’onde de 1090Mhz est alors échantillonnée à l’aide d'un Dongle DVB-T pourvu d’une puce <b>RTL2832U</b>. Initiallement destiné à la réception de la TNT (≈20€), l’utilisation de drivers différents permet de le convertir en système SDR (Software Define Radio), dont on peut choisir la fréquence de réception.</p>
 <p style="text-align:justify;">
-Nous avons fait le choix d’utiliser Soapy SDR (disponible en package pour Rust), qui permet à l’aide de simple lignes de code de se connecter au dongle et de choisir le taux d’échantillonnage, la fréquence de réception et le gain. </p>
+Nous avons fait le choix d’utiliser Soapy SDR (disponible en package pour Rust), qui permet à l’aide de simple lignes de code, de se connecter au dongle et de choisir le taux d’échantillonnage, la fréquence de réception et le gain. </p>
 <p style="text-align:justify;">
-L’onde est modulée en quadrature (I&Q), le résultat est donc sous forme de complexe, que l’on démodule en calculant le module. À partir de là, on dispose de l’onde, toutefois il faut encore identifier les messages ADS-B situés dans l’échantillon. Ils sont échantillonnés à une fréquence : </p>
+L’onde est modulée en quadrature (I&Q), le résultat est obtenu sous forme de complexe, que l’on démodule en calculant le module. À partir de là, on dispose de l’onde, toutefois il faut encore identifier les messages ADS-B situés dans l’échantillon. Ils sont échantillonnés à une fréquence : </p>
 <p style="text-align: center;">
 <code>
  fe = 2.10<sup>6</sup> Hz (soit Te = 500 ns)
  </code> </p>
- <p style="text-align:justify;">Sachant qu’il faut deux amplitudes pour coder un bit, la durée totale d’un message est de 112 microsecondes. Pour identifier le début du squitter on s’appuie sur la détection du préambule. Il s’agit d’un motif caractéristique (cf. image). Il existe plusieurs moyens de détecter un préambule (cf. bibliographie), nous avons utilisé la détection logique du préambule. Le but de cette méthode est d’identifier par des opérations logiques (<, >) les successions d’amplitudes sur l’onde s’apparentant au motif (cf. figure préambule).</p>
+ <p style="text-align:justify;">Sachant qu’il faut deux amplitudes pour coder un bit, la durée totale d’un message est de 112 microsecondes. Pour identifier le début du squitter on s’appuie sur la détection du préambule. Il s’agit d’un motif caractéristique (cf. image). Il existe plusieurs moyens de détecter un préambule (cf. bibliographie), nous avons utilisé sa détection logique. Le but de cette méthode est d’identifier par des opérations logiques (<, >) les successions d’amplitudes sur l’onde s’apparentant au motif (cf. figure préambule).</p>
 <p style="text-align: center;">
 <img  typeof="foaf:Image" src="source/../images/preambule.jpg"  alt="" title="preambule">  
 </p>
 <p style="text-align:justify;">
-Pour ce faire, on parcourt l’échantillon de l’onde, puis à partir de l’amplitude [i], on établie une moyenne des valeurs « hautes » ([i], [i+2], [i+7], [i+9]), puis on vérifie que toutes les autres valeurs jusqu’à [i+15] sont inférieures aux valeurs hautes et vérifient les bonnes variations d’amplitudes. </p>
+Pour ce faire, on parcourt l’échantillon de l’onde, puis à partir de l’amplitude [i], on établi une moyenne des valeurs « hautes » ([i], [i+2], [i+7], [i+9]), puis on vérifie que toutes les autres valeurs jusqu’à [i+15] sont inférieures aux valeurs hautes et suivent les bonnes variations d’amplitudes. </p>
 <p style="text-align:justify;">
 Dès que l’on identifie un préambule, on stocke les 224 points suivants de l’échantillon pour les convertir en binaire selon la méthode suivante :
 Chaque paire de points successives et d’amplitudes (A1, A2) définit un unique bit b tel que si A1>A2 alors b = 1, sinon b=0.</p>
@@ -313,16 +307,16 @@ Cette antenne est alors connectée à un filtre 1090MHz (1), puis au dongle RTL-
 </p>
 <h1 id="performance-de-lantenne"><a class="header" href="#performance-de-lantenne">Performance de l'antenne</a></h1>
 <p style="text-align:justify;">
-On observe une très bonne performance de l'antenne. Assurant une bonne réception dans les 300km au sud, voir 500km</p>
+On observe une très bonne performance de l'antenne, assurant une bonne réception dans les 300km au sud, voir 500km</p>
 <p style="text-align: center;">
 <img  typeof="foaf:Image" src="source/../images/diagramme.png"  alt="" title="reception">  
 </p><div style="break-before: page; page-break-before: always;"></div><h1 id="rustracker-1"><a class="header" href="#rustracker-1">Rustracker</a></h1>
 <p style="text-align:justify;">Le serveur est chargé du traitement des messages binaires qui sont reçus par une ou plusieurs sources. </p>
 <p style="text-align:justify;">Lorsque l’on reçoit un squitter, on commence par le découper et le stocker sous forme de struct squitter, qui dispose de méthodes permettant d’en récupérer les différentes sections.</p>
-<p style="text-align:justify;">À partir de son code OACI, on va associer le squitter à un nouvel objet avion (la struct plane), qui a pour attribut l’ensemble des informations utiles associées à un avion. Chaque avion sera ensuite stocké dans une hashmap ayant pour clef son code OACI. Associer un nouveau squitter reçu d'un avion déjà existant dans notre structure de donnée sera alors plus efficace.</p>
+<p style="text-align:justify;">À partir de son code OACI, on va associer le squitter à un nouvel objet avion (la struct plane), qui a pour attribut l’ensemble des informations utiles associées à ce dernier. Chaque avion sera ensuite stocké dans une hashmap ayant pour clef son code OACI. Associer un nouveau squitter reçu d'un aéronef déjà existant dans notre structure de données sera alors plus efficace.</p>
 <p style="text-align:justify;">Une fois le squitter lié à l’avion, on en extrait les informations. En l’occurrence nous traitons 3 types de données : altitude, vitesse, et numéro de vol. Nous allons détailler séparément leurs analyses dans la section suivante.</p>
 <h1 id="opérationabilité"><a class="header" href="#opérationabilité">Opérationabilité</a></h1>
-<p style="text-align:justify;">Maintenant que nous avons une structure de donnée avec toutes les informations exploitables, il faut pouvoir la rendre opérationnelle, c’est-à-dire que l’on soit en mesure de créer une carte interactive des avions. Nous avons fait le choix que le programme génère un geojson qui pourra être lu de manière passive par notre interface graphique.</p>
+<p style="text-align:justify;">Maintenant que nous avons une structure de données avec toutes les informations exploitables, il faut pouvoir la rendre opérationnelle, c’est-à-dire que l’on soit en mesure de créer une carte interactive des avions. Nous avons fait le choix que le programme génère un geojson qui pourra être lu de manière passive par notre interface graphique.</p>
 <p>Pour ce faire, on fait face à plusieurs enjeux :</p>
 <ul>
 <li>
@@ -330,37 +324,37 @@ On observe une très bonne performance de l'antenne. Assurant une bonne récepti
 des squitters.</p>
 </li>
 <li>
-<p>Être capable de retirer les avions qui sont sortis de notre champ de réception depuis un certains
+<p>Être capable de retirer les avions qui sont sortis de notre champ de réception depuis un certain
 temps.</p>
 </li>
 </ul>
-<p style="text-align:justify;">Pour ces deux problèmes, nous avons décider d’utiliser la programmation asynchrone. Deux threads vont être capables de communiquer avec le thread principal de réception des messages à travers des channels.</p>
-<p style="text-align:justify;">Le premier thread est chargé de gérer la durée de vie des avions. Il envoie un signal à notre thread principal toute les 30 secondes, dès que le thread principal reçoit ce signal, il va parcourir la hashmap contenant chaque avion, et mesurer depuis combien de temps il n’a pas reçu de nouveaux messages. Si ce temps dépasse 30 secondes, alors on considère que l’avion est sorti de notre champ de réception, et est donc retiré de notre mémoire.</p>
+<p style="text-align:justify;">Pour ces deux problèmes, nous avons décidé d’utiliser la programmation asynchrone. Deux threads vont être capables de communiquer avec le thread principal de réception des messages à travers des channels.</p>
+<p style="text-align:justify;">Le premier thread est chargé de gérer la durée de vie des avions. Il envoi un signal à notre thread principal toute les 30 secondes, dès que ce dernier reçoit ce signal, il va parcourir la hashmap contenant chaque avion, et mesurer depuis combien de temps il n’a pas reçu de nouveaux messages. Si ce temps dépasse 30 secondes, alors on considère que l’avion est sorti de notre champ de réception, et est donc retiré de notre mémoire.</p>
 <p style="text-align:justify;">Le second thread lui génère le geojson. Un package de Rust spécialement créé pour les geojson propose une struct dans laquelle on stocke nos avions (avec moins d’information que notre struct plane détaillée plus tôt, on ne mettra dans le geojson que les données utiles à l’interface graphique) et qui grâce à une méthode de conversion en string de cette struct, nous permet d’éditer le contenu de notre fichier plane.geojson.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="compact-position-reporting-cpr-"><a class="header" href="#compact-position-reporting-cpr-">Compact Position Reporting (CPR) :</a></h1>
-<p style="text-align:justify;">La contrainte des 56 bits de données dans le cadre de la position peut être problématique pour un obtenir une précision suffisante. En effet, le rôle numéro 1 du contrôle aérien est d’assurer la sécurité des avions par une bonne séparation de ceux-ci. Or pour ce faire, il faut avoir l’altitude de l’avion, sa latitude, et sa longitude.</p>
+<p style="text-align:justify;">La contrainte des 56 bits de données dans le cadre de la position peut être problématique pour obtenir une précision suffisante. En effet, le rôle numéro 1 du contrôle aérien est d’assurer la sécurité des avions par une bonne séparation de ceux-ci. Or pour ce faire, il faut avoir l’altitude de l’avion, sa latitude, et sa longitude.</p>
 <p style="text-align:justify;">Pour le codage de la latitude/longitude, en pratique une précision suffisante (environs 5 mètres près) est atteinte en 45 bits, or seul 35 sont utilisés. Et cela grâce à l’algorithme de compact position reporting.</p>
-<p style="text-align:justify;">Cet algorithme repose sur le découpage du globe en zone longitudinale et latitudinal. On procède à deux découpages légèrement différents, ce qui donne deux grilles que l’on nomme pair et impaire. Ainsi, au lieu d’encoder la position sur un seul message, seule la position à l’intérieur d’une case d’une grille est codée. On transmet alors cette position « interne » à la grille sur un message qui indique la parité de la grille, puis en couplant les messages de positions pair et impair, nous parvenons à identifier la position réelle de l’avion.</p>
-<p style="text-align:justify;">Un exemple simple de l’idée qu’utilise l’algorithme CPR peut se faire à l’aide de surface « simple » de 16x16, on divise cette surface par une grille de 5x5, notre grille paire, et une grille de 4x4, notre grille impaire.</p>
+<p style="text-align:justify;">Cet algorithme repose sur le découpage du globe en zone longitudinale et latitudinal. On procède à deux découpages légèrement différents, ce qui donne deux grilles que l’on nomme paire et impaire. Ainsi, au lieu d’encoder la position sur un seul message, seule la position à l’intérieur d’une case d’une grille est codée. On transmet alors cette position « interne » à la grille sur un message qui indique sa parité, puis en couplant les messages de positions pair et impair, nous parvenons à identifier la position réelle de l’avion.</p>
+<p style="text-align:justify;">Un exemple de l’idée qu’utilise l’algorithme CPR peut se faire à l’aide de surface « simple » de 16x16, on divise cette surface par une grille de 5x5, notre grille paire, et une grille de 4x4, notre grille impaire.</p>
 <p style="text-align:justify;">La position que l’on souhaite obtenir est de (x=7 ; y=9). Cette position se trouve aux coordonnées (x = 2 ; y=4) d’une case de la grille paire et dans (x= 3 ; y = 1) de la grille impaire. On retrouve la position en superposant toutes les possibilités des deux grilles, et en obtenant une unique correspondance entre les deux.</p>
 <p style="text-align: center;">
 <img  typeof="foaf:Image" src="rustracker/../images/cpr.png"  alt="" title="cpr">  
 </p>
-<p style="text-align:justify;">En pratique, l’algorithme CPR commence par décoder dans cet ordre l’index de la zone latitudinale, la latitude, puis l’index de la zone longitudinale puis la longitude. En effet, on cherche la position d’abords globale, c’est-à-dire identifier la « case » dans laquelle se situe l’avion.</p>
-<p style="text-align:justify;">Cette recherche qui s’effectue grâce à un message paire et impaire donne une position « globale ».</p>
-<p style="text-align:justify;">Ce premier décodage de position permet en effet de connaître la zone dans laquelle l’avion se situe. Puisque le déplacement de l’avion est continu, pour le décodage des positions suivantes, les indexes longitudinaux et latitudinaux peuvent être directement déduis de la position précédente. On utilisera alors qu’un seul message de parités quelconque.</p>
+<p style="text-align:justify;">En pratique, l’algorithme CPR commence par décoder dans cet ordre l’index de la zone latitudinale, la latitude, puis l’index de la zone longitudinale puis la longitude. En effet, on cherche la position d’abord globale, c’est-à-dire identifier la « case » dans laquelle se situe l’avion.</p>
+<p style="text-align:justify;">Cette recherche qui s’effectue grâce à un message pair et impair donne une position « globale ».</p>
+<p style="text-align:justify;">Ce premier décodage de position permet en effet de connaître la zone dans laquelle l’avion se situe. Puisque le déplacement de l’avion est continu, pour le décodage des positions suivantes, les index longitudinaux et latitudinaux peuvent être directement déduis de la position précédente. On utilisera alors qu’un seul message de parités quelconque.</p>
 <p style="text-align:justify;">Les messages de positions transmettent aussi l’altitude qui se décode sans algorithme particulièrement remarquable.</p>
 <p style="text-align:justify;">
 </p><div style="break-before: page; page-break-before: always;"></div><h1 id="gestion-des-erreurs-de-positions-"><a class="header" href="#gestion-des-erreurs-de-positions-">Gestion des erreurs de positions :</a></h1>
-<p style="text-align:justify;">L’algorithme de CPR présente un avantage certain. Toutefois, il peut comporter des erreurs. Ces erreurs sont principalement dû au décodage des indexes des zones de latitude et longitude, et à d’autres calculs sensibles. Principalement lors de la transition de l’avion entre deux zones distinctes.</p>
-<p style="text-align:justify;">Comme présenté par la NASA (cf. bibliographie), ces erreurs sont dû à l’utilisations de nombre flottant. Leur code fournit des preuves en temps réel de leurs résultats grâce à l’ACSL.</p>
+<p style="text-align:justify;">L’algorithme de CPR présente un avantage certain. Toutefois, il peut comporter des erreurs. Celles-ci sont principalement dûes au décodage des index des zones de latitude et longitude, et à d’autres calculs sensibles. Principalement lors de la transition de l’avion entre deux zones distinctes.</p>
+<p style="text-align:justify;">Comme présenté par la NASA (cf. bibliographie), ces erreurs sont dûes à l’utilisations de nombres flottants. Leur code fournit des preuves en temps réel de leurs résultats grâce à l’ACSL.</p>
 <p style="text-align:justify;">Cependant, nous devons trouver un moyen de traiter ces erreurs lorsqu’elles surviennent. </p>
-<p style="text-align:justify;">Plusieurs solutions sont suggérées dans l’ouvrage de Junzi Sun, dont la cohérence de la position de l’avion en fonction de la portée de l’antenne. Cette solution n’est pas envisageable pour nous car les récepteurs communiquent de façon anonyme avec le serveur.</p>
+<p style="text-align:justify;">Plusieurs solutions sont suggérées dans l’ouvrage de Junzi Sun (cf. bibliographie), dont la cohérence de la position de l’avion en fonction de la portée de l’antenne. Cette solution n’est pas envisageable pour nous car les récepteurs communiquent de façon anonyme avec le serveur.</p>
 <p style="text-align:justify;">En observant les positions aberrantes que nous obtenions, on a remarqué une oscillation de la trajectoire. Nous avons donc imaginé une autre solution, qui est un test de cohérence. </p>
 <p style="text-align: center;">
 <img  typeof="foaf:Image" src="rustracker/../images/erreur.png"  alt="" title="erreur">  
 </p>
 <p style="text-align:justify;">Comme présenté postérieurement, les messages de vitesses donnent une information : le « Track angle », qui est le cap suivi par l’avion (entre 0° et 360°). Or ce cap peut aussi être obtenu par une déduction à partir des deux dernières positions connues qui créent un vecteur dont la direction est égale au cap (bien que plus imprécis).</p>
-<p style="text-align:justify;">En comparant les deux résultats obtenue sur les toutes premières positions décodées de l’avion, nous pouvons détecter ces oscillations qui sont impossible avec un cap constant et donc éliminer ces trajectoires problématiques. </p>
+<p style="text-align:justify;">En comparant les deux résultats obtenus sur les toutes premières positions décodées de l’avion, nous pouvons détecter ces oscillations qui sont impossibles avec un cap constant et donc éliminer ces trajectoires problématiques. </p>
 <h1 id="mise-en-pratique-"><a class="header" href="#mise-en-pratique-">Mise en pratique :</a></h1>
 <p style="text-align:justify;">Cette comparaison de cap était initialement effectuée sur tous les points de la trajectoire, cependant le calcul est lourd et a entraîné un retard du serveur sur les messages reçus. Nous avons donc fait le choix de tester seulement les premières positions de l'avion.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="vitesse"><a class="header" href="#vitesse">Vitesse</a></h1>
 <p>Les messages portant les informations de vitesses ont un type-code égal à 19.</p>
@@ -440,11 +434,10 @@ temps.</p>
 <p style="text-align:justify;">L’interface graphique est codée en JavaScript. On utilise Leaflet qui est un package permettant de générer une carte. Cette carte affiche en temps réel les avions dont la position est partagée.</p>
 <p style="text-align:justify;">Cependant comme ce n’est pas toujours le cas (selon le type de transpondeur de l’avion), et afin de présenter les informations supplémentaires tel que le numéro de vol, l’altitude et la vitesse, on a fait le choix d’ajouter un tableau contenant la liste des avions.</p>
 <p style="text-align:justify;">De plus, ce tableau dispose de code OACI « cliquable » pour les avions dont la position est visible sur la carte. Lorsque l’on clique sur un bouton, la carte se recentre alors sur l’avion sélectionné et affiche son icone et sa trajectoire dans une couleur différente afin de le mettre en valeur.</p>
-<p style="text-align:justify;">Enfin, la collecte des informations se fait en récupérant les informations du geojson généré par Rustracker toutes les 1,5 secondes. Le geojson est une FeatureCollection qui regroupe plusieurs Features qui sont nos avions. Ces Features ont pour ID le code OACI, et sont des LineString, c’est-à-dire que le champs geometry contient l’ensemble des points qui composent la trajectoire, puis dispose en attribut du reste des informations de l’avion.</p>
+<p style="text-align:justify;">Enfin, la collecte des informations se fait en récupérant les informations du geojson généré par Rustracker toutes les 1,5 secondes. Le geojson est une FeatureCollection qui regroupe plusieurs Features qui sont nos avions. Ces Features ont pour ID le code OACI, et sont des LineString, c’est-à-dire que le champ geometry contient l’ensemble des points qui composent la trajectoire, puis dispose en attribut du reste des informations de l’avion.</p>
 <p style="text-align:justify;">En itérant sur toutes les Feature, on ajoute pour chacune un calque à la carte qui affiche la trajectoire, et l’icone que l’on oriente grâce au « track angle » (la route suivie par l’avion). Chacun de ces calques sont dans un même groupe de calque.</p>
 <p style="text-align:justify;">
-À chaque nouvelle réception des données du geojson, on vide alors ce groupe de calque afin de le remplir de nouveau avec les informations actualisées.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="virtual-machine"><a class="header" href="#virtual-machine">Virtual Machine</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="storyline"><a class="header" href="#storyline">Storyline</a></h1>
+À chaque nouvelle réception des données du geojson, on vide alors ce groupe de calque afin de le remplir de nouveau avec les informations actualisées.</p><div style="break-before: page; page-break-before: always;"></div><h1 id="storyline"><a class="header" href="#storyline">Storyline</a></h1>
 <p>Le rétro planning original était:</p>
 <p><img src="images/retroplan.png" alt="Retro Planning" /></p>
 <p>Mais des difficultés son apparu pendant le projet, ce qui nous a forcé à le modifier légèrement.</p>
@@ -538,8 +531,7 @@ Le groupe continue son apprentissage du RUST.</p>
 --&gt; Bastian : rédige le rapport sous la forme de rustbook</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h1>
-<p>All the project goals have been completed in time. The software is completely working, the managed to learn a new programming language and to overcom difficulties during the devellopment.</p>
-<p>Les grands objectifs du projet sont remplis et notre livrable final est opérationnel. Ce projet aura été très enrichissant dans la mesure où nous avons découvert le language de programmation RUST et nous avons eu a traiter diverses problématiques (traitement du signal, interface web, serveur sur machine virtuelle, programmation asynchrone, communications tcp, etc).</p>
+<p>Les grands objectifs du projet sont remplis et notre livrable final est opérationnel. Ce projet aura été très enrichissant dans la mesure où nous avons découvert le langage de programmation RUST et nous avons eu a traiter diverses problématiques (traitement du signal, interface web, serveur sur machine virtuelle, programmation asynchrone, communications tcp, etc).</p>
 <h3 id="contributeurs"><a class="header" href="#contributeurs">Contributeurs</a></h3>
 <p>Les quatre étudiants de Télécom SudParis ayant contribués au projet sont : </p>
 <ul>
@@ -551,15 +543,17 @@ Le groupe continue son apprentissage du RUST.</p>
 <p>Un grand merci à <a href="https://github.com/rgrunbla">Rémy Grünblatt</a> pour ses conseils et son aide.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bibliographie"><a class="header" href="#bibliographie">Bibliographie</a></h1>
 <h1 id="the-1090mhz-riddle"><a class="header" href="#the-1090mhz-riddle">The 1090Mhz Riddle</a></h1>
-<p>@book{sun1090mhz,
-author = {Sun, Junzi}, 
-title = {The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals},
-publisher = {TU Delft OPEN Publishing},
-year = 2021,
-edition = 2,
-isbn = {978-94-6366-402-8},
-doi = {10.34641/mg.11}
-}</p>
+<code>
+@book{sun1090mhz,
+    author = {Sun, Junzi}, 
+    title = {The 1090 Megahertz Riddle: A Guide to Decoding Mode S and ADS-B Signals},
+    publisher = {TU Delft OPEN Publishing},
+    year = 2021,
+    edition = 2,
+    isbn = {978-94-6366-402-8},
+    doi = {10.34641/mg.11}
+}
+</code>
 <h1 id="explication-de-la-nasa-sur-lalgorithme-cpr"><a class="header" href="#explication-de-la-nasa-sur-lalgorithme-cpr">Explication de la NASA sur l'algorithme CPR</a></h1>
 <p>https://github.com/nasa/cpr</p>
 
