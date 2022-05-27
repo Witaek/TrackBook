@@ -17,12 +17,12 @@
 # Source
 
 - [Source](source/reception.md)
-- [Infrastructure] (source/infrastructure.md)
+- [Infrastructure](source/infrastructure.md)
 
 # Rustracker
 - [Rustracker](rustracker/rustracker.md)
 - [Position](rustracker/position.md)
-- - [Erreurs] (rustracker/erreurs.md)
+- - [Erreurs](rustracker/erreurs.md)
 - [Vitesse](rustracker/vitesse.md)
 - [Callsign](rustracker/callsign.md)
 
