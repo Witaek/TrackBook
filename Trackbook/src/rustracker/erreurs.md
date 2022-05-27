@@ -2,7 +2,7 @@
 
 <p style="text-align:justify;">L’algorithme de CPR présente un avantage certain. Toutefois, il peut comporter des erreurs. Ces erreurs sont principalement dû au décodage des indexes des zones de latitude et longitude, et à d’autres calculs sensibles. Principalement lors de la transition de l’avion entre deux zones distinctes.</p>
 
-<p style="text-align:justify;">Comme présenté par la NASA [biblio], ces erreurs sont dû à l’utilisations de nombre flottant. Leur code fournit des preuves en temps réel de leurs résultats grâce à l’ACSL.</p>
+<p style="text-align:justify;">Comme présenté par la NASA (cf. bibliographie), ces erreurs sont dû à l’utilisations de nombre flottant. Leur code fournit des preuves en temps réel de leurs résultats grâce à l’ACSL.</p>
 
 <p style="text-align:justify;">Cependant, nous devons trouver un moyen de traiter ces erreurs lorsqu’elles surviennent. </p>
 
